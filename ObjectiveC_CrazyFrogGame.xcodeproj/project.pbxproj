@@ -1,0 +1,790 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		52356BFA1907012E00D9C62F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52356BF91907012E00D9C62F /* Foundation.framework */; };
+		52356BFC1907012E00D9C62F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52356BFB1907012E00D9C62F /* CoreGraphics.framework */; };
+		52356BFE1907012E00D9C62F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52356BFD1907012E00D9C62F /* UIKit.framework */; };
+		52356C001907012E00D9C62F /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52356BFF1907012E00D9C62F /* SpriteKit.framework */; };
+		52356C061907012E00D9C62F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 52356C041907012E00D9C62F /* InfoPlist.strings */; };
+		52356C081907012E00D9C62F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 52356C071907012E00D9C62F /* main.m */; };
+		52356C0C1907012F00D9C62F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 52356C0B1907012F00D9C62F /* AppDelegate.m */; };
+		52356C0F1907012F00D9C62F /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52356C0D1907012F00D9C62F /* Main_iPhone.storyboard */; };
+		52356C121907012F00D9C62F /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52356C101907012F00D9C62F /* Main_iPad.storyboard */; };
+		52356C1C1907012F00D9C62F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52356C1B1907012F00D9C62F /* Images.xcassets */; };
+		52356C231907012F00D9C62F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52356C221907012F00D9C62F /* XCTest.framework */; };
+		52356C241907012F00D9C62F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52356BF91907012E00D9C62F /* Foundation.framework */; };
+		52356C251907012F00D9C62F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52356BFD1907012E00D9C62F /* UIKit.framework */; };
+		52356C2D1907012F00D9C62F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 52356C2B1907012F00D9C62F /* InfoPlist.strings */; };
+		52356C2F1907012F00D9C62F /* Crazy_FrogTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52356C2E1907012F00D9C62F /* Crazy_FrogTests.m */; };
+		52356C3D1907116A00D9C62F /* CFLevelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 52356C3C1907116A00D9C62F /* CFLevelManager.m */; };
+		52356C401907118C00D9C62F /* CFWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52356C3F1907118C00D9C62F /* CFWelcomeViewController.m */; };
+		52356C43190711A700D9C62F /* CFSelectLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52356C42190711A700D9C62F /* CFSelectLevelViewController.m */; };
+		52356C46190711BF00D9C62F /* CFGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52356C45190711BF00D9C62F /* CFGameViewController.m */; };
+		52356C4C1907120800D9C62F /* CFLevelScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 52356C4B1907120800D9C62F /* CFLevelScene.m */; };
+		52356C4F1907124700D9C62F /* CFFrogNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 52356C4E1907124700D9C62F /* CFFrogNode.m */; };
+		52356C52190712AA00D9C62F /* CFFlyNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 52356C51190712AA00D9C62F /* CFFlyNode.m */; };
+		52356C55190712C600D9C62F /* CFWaterObstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = 52356C54190712C600D9C62F /* CFWaterObstacle.m */; };
+		52356C58190712FF00D9C62F /* CFAwardNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 52356C57190712FF00D9C62F /* CFAwardNode.m */; };
+		52356C5B1907131300D9C62F /* CFFloorNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 52356C5A1907131300D9C62F /* CFFloorNode.m */; };
+		52356C5E1907133000D9C62F /* CFWaterNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 52356C5D1907133000D9C62F /* CFWaterNode.m */; };
+		52356C661907139200D9C62F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52356C621907139200D9C62F /* Default-568h@2x.png */; };
+		52356C671907139200D9C62F /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 52356C631907139200D9C62F /* Default-Landscape@2x~ipad.png */; };
+		52356C681907139200D9C62F /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 52356C641907139200D9C62F /* Default-Landscape~ipad.png */; };
+		52356C691907139200D9C62F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52356C651907139200D9C62F /* Default@2x.png */; };
+		52356C6C190713DB00D9C62F /* frog.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 52356C6B190713DB00D9C62F /* frog.atlas */; };
+		D05F563D22DC90AE002BBEFB /* lost.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D05F563922DC90AE002BBEFB /* lost.m4a */; };
+		D05F563E22DC90AE002BBEFB /* eat.wav in Resources */ = {isa = PBXBuildFile; fileRef = D05F563A22DC90AE002BBEFB /* eat.wav */; };
+		D05F563F22DC90AE002BBEFB /* win.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D05F563B22DC90AE002BBEFB /* win.m4a */; };
+		D05F564022DC90AE002BBEFB /* frog.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D05F563C22DC90AE002BBEFB /* frog.m4a */; };
+		D05F564A22DCA082002BBEFB /* Level1.plist in Resources */ = {isa = PBXBuildFile; fileRef = D05F564422DCA081002BBEFB /* Level1.plist */; };
+		D05F564B22DCA082002BBEFB /* Level2.plist in Resources */ = {isa = PBXBuildFile; fileRef = D05F564522DCA081002BBEFB /* Level2.plist */; };
+		D05F564C22DCA082002BBEFB /* Level4.plist in Resources */ = {isa = PBXBuildFile; fileRef = D05F564622DCA081002BBEFB /* Level4.plist */; };
+		D05F564D22DCA082002BBEFB /* Level6.plist in Resources */ = {isa = PBXBuildFile; fileRef = D05F564722DCA082002BBEFB /* Level6.plist */; };
+		D05F564E22DCA082002BBEFB /* Level5.plist in Resources */ = {isa = PBXBuildFile; fileRef = D05F564822DCA082002BBEFB /* Level5.plist */; };
+		D05F564F22DCA082002BBEFB /* Level3.plist in Resources */ = {isa = PBXBuildFile; fileRef = D05F564922DCA082002BBEFB /* Level3.plist */; };
+		D065C7ED22D727A600AE96CA /* CFBeeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D065C7EC22D727A600AE96CA /* CFBeeNode.m */; };
+		D065C80322D7318B00AE96CA /* SKAction+SKTExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = D065C7F222D7318A00AE96CA /* SKAction+SKTExtras.m */; };
+		D065C80422D7318B00AE96CA /* SKNode+SKTDebugDraw.m in Sources */ = {isa = PBXBuildFile; fileRef = D065C7F622D7318A00AE96CA /* SKNode+SKTDebugDraw.m */; };
+		D065C80522D7318B00AE96CA /* SKTEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = D065C7F822D7318A00AE96CA /* SKTEffects.m */; };
+		D065C80622D7318B00AE96CA /* SKAction+SKTSpecialEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = D065C7F922D7318B00AE96CA /* SKAction+SKTSpecialEffects.m */; };
+		D065C80722D7318B00AE96CA /* SKEmitterNode+SKTExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = D065C7FE22D7318B00AE96CA /* SKEmitterNode+SKTExtras.m */; };
+		D065C80822D7318B00AE96CA /* SKTAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = D065C80022D7318B00AE96CA /* SKTAudio.m */; };
+		D065C80922D7318B00AE96CA /* SKTTimingFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = D065C80122D7318B00AE96CA /* SKTTimingFunctions.m */; };
+		D065C80A22D7318B00AE96CA /* SKNode+SKTExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = D065C80222D7318B00AE96CA /* SKNode+SKTExtras.m */; };
+		D065C80E22D753E700AE96CA /* PBParallaxScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = D065C80C22D753E700AE96CA /* PBParallaxScrolling.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		52356C261907012F00D9C62F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52356BEE1907012E00D9C62F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52356BF51907012E00D9C62F;
+			remoteInfo = "Crazy Frog";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		52356BF61907012E00D9C62F /* Crazy Frog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Crazy Frog.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		52356BF91907012E00D9C62F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		52356BFB1907012E00D9C62F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		52356BFD1907012E00D9C62F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		52356BFF1907012E00D9C62F /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		52356C031907012E00D9C62F /* Crazy Frog-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Crazy Frog-Info.plist"; sourceTree = "<group>"; };
+		52356C051907012E00D9C62F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		52356C071907012E00D9C62F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		52356C091907012E00D9C62F /* Crazy Frog-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Crazy Frog-Prefix.pch"; sourceTree = "<group>"; };
+		52356C0A1907012F00D9C62F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		52356C0B1907012F00D9C62F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		52356C0E1907012F00D9C62F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		52356C111907012F00D9C62F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		52356C1B1907012F00D9C62F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		52356C211907012F00D9C62F /* Crazy FrogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Crazy FrogTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		52356C221907012F00D9C62F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		52356C2A1907012F00D9C62F /* Crazy FrogTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Crazy FrogTests-Info.plist"; sourceTree = "<group>"; };
+		52356C2C1907012F00D9C62F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		52356C2E1907012F00D9C62F /* Crazy_FrogTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Crazy_FrogTests.m; sourceTree = "<group>"; };
+		52356C3B1907116A00D9C62F /* CFLevelManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFLevelManager.h; sourceTree = "<group>"; };
+		52356C3C1907116A00D9C62F /* CFLevelManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFLevelManager.m; sourceTree = "<group>"; };
+		52356C3E1907118C00D9C62F /* CFWelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFWelcomeViewController.h; sourceTree = "<group>"; };
+		52356C3F1907118C00D9C62F /* CFWelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFWelcomeViewController.m; sourceTree = "<group>"; };
+		52356C41190711A700D9C62F /* CFSelectLevelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFSelectLevelViewController.h; sourceTree = "<group>"; };
+		52356C42190711A700D9C62F /* CFSelectLevelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFSelectLevelViewController.m; sourceTree = "<group>"; };
+		52356C44190711BF00D9C62F /* CFGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFGameViewController.h; sourceTree = "<group>"; };
+		52356C45190711BF00D9C62F /* CFGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFGameViewController.m; sourceTree = "<group>"; };
+		52356C4A1907120800D9C62F /* CFLevelScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFLevelScene.h; sourceTree = "<group>"; };
+		52356C4B1907120800D9C62F /* CFLevelScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFLevelScene.m; sourceTree = "<group>"; };
+		52356C4D1907124700D9C62F /* CFFrogNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFFrogNode.h; sourceTree = "<group>"; };
+		52356C4E1907124700D9C62F /* CFFrogNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFFrogNode.m; sourceTree = "<group>"; };
+		52356C50190712AA00D9C62F /* CFFlyNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFFlyNode.h; sourceTree = "<group>"; };
+		52356C51190712AA00D9C62F /* CFFlyNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFFlyNode.m; sourceTree = "<group>"; };
+		52356C53190712C600D9C62F /* CFWaterObstacle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFWaterObstacle.h; sourceTree = "<group>"; };
+		52356C54190712C600D9C62F /* CFWaterObstacle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFWaterObstacle.m; sourceTree = "<group>"; };
+		52356C56190712FF00D9C62F /* CFAwardNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFAwardNode.h; sourceTree = "<group>"; };
+		52356C57190712FF00D9C62F /* CFAwardNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFAwardNode.m; sourceTree = "<group>"; };
+		52356C591907131300D9C62F /* CFFloorNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFFloorNode.h; sourceTree = "<group>"; };
+		52356C5A1907131300D9C62F /* CFFloorNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFFloorNode.m; sourceTree = "<group>"; };
+		52356C5C1907133000D9C62F /* CFWaterNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFWaterNode.h; sourceTree = "<group>"; };
+		52356C5D1907133000D9C62F /* CFWaterNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFWaterNode.m; sourceTree = "<group>"; };
+		52356C621907139200D9C62F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		52356C631907139200D9C62F /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
+		52356C641907139200D9C62F /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		52356C651907139200D9C62F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		52356C6B190713DB00D9C62F /* frog.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = frog.atlas; sourceTree = "<group>"; };
+		52356C6D1907140F00D9C62F /* Macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
+		D05F563922DC90AE002BBEFB /* lost.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = lost.m4a; path = "../../../../Downloads/materialy/Rozdziaą 3/3.8/Crazy Frog/Crazy Frog/Sound Effects/lost.m4a"; sourceTree = "<group>"; };
+		D05F563A22DC90AE002BBEFB /* eat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = eat.wav; path = "../../../../Downloads/materialy/Rozdziaą 3/3.8/Crazy Frog/Crazy Frog/Sound Effects/eat.wav"; sourceTree = "<group>"; };
+		D05F563B22DC90AE002BBEFB /* win.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = win.m4a; path = "../../../../Downloads/materialy/Rozdziaą 3/3.8/Crazy Frog/Crazy Frog/Sound Effects/win.m4a"; sourceTree = "<group>"; };
+		D05F563C22DC90AE002BBEFB /* frog.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = frog.m4a; path = "../../../../Downloads/materialy/Rozdziaą 3/3.8/Crazy Frog/Crazy Frog/Sound Effects/frog.m4a"; sourceTree = "<group>"; };
+		D05F564422DCA081002BBEFB /* Level1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Level1.plist; path = "../../../../Downloads/materialy/Rozdziaą 3/3.12/Crazy Frog/Crazy Frog/Levels/Level1.plist"; sourceTree = "<group>"; };
+		D05F564522DCA081002BBEFB /* Level2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Level2.plist; path = "../../../../Downloads/materialy/Rozdziaą 3/3.12/Crazy Frog/Crazy Frog/Levels/Level2.plist"; sourceTree = "<group>"; };
+		D05F564622DCA081002BBEFB /* Level4.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Level4.plist; path = "../../../../Downloads/materialy/Rozdziaą 3/3.12/Crazy Frog/Crazy Frog/Levels/Level4.plist"; sourceTree = "<group>"; };
+		D05F564722DCA082002BBEFB /* Level6.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Level6.plist; path = "../../../../Downloads/materialy/Rozdziaą 3/3.12/Crazy Frog/Crazy Frog/Levels/Level6.plist"; sourceTree = "<group>"; };
+		D05F564822DCA082002BBEFB /* Level5.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Level5.plist; path = "../../../../Downloads/materialy/Rozdziaą 3/3.12/Crazy Frog/Crazy Frog/Levels/Level5.plist"; sourceTree = "<group>"; };
+		D05F564922DCA082002BBEFB /* Level3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Level3.plist; path = "../../../../Downloads/materialy/Rozdziaą 3/3.12/Crazy Frog/Crazy Frog/Levels/Level3.plist"; sourceTree = "<group>"; };
+		D065C7EB22D7276A00AE96CA /* CFBeeNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CFBeeNode.h; sourceTree = "<group>"; };
+		D065C7EC22D727A600AE96CA /* CFBeeNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CFBeeNode.m; sourceTree = "<group>"; };
+		D065C7F222D7318A00AE96CA /* SKAction+SKTExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "SKAction+SKTExtras.m"; path = "../../../SKTUtils/SKAction+SKTExtras.m"; sourceTree = "<group>"; };
+		D065C7F322D7318A00AE96CA /* SKEmitterNode+SKTExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SKEmitterNode+SKTExtras.h"; path = "../../../SKTUtils/SKEmitterNode+SKTExtras.h"; sourceTree = "<group>"; };
+		D065C7F422D7318A00AE96CA /* SKNode+SKTExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SKNode+SKTExtras.h"; path = "../../../SKTUtils/SKNode+SKTExtras.h"; sourceTree = "<group>"; };
+		D065C7F522D7318A00AE96CA /* SKNode+SKTDebugDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SKNode+SKTDebugDraw.h"; path = "../../../SKTUtils/SKNode+SKTDebugDraw.h"; sourceTree = "<group>"; };
+		D065C7F622D7318A00AE96CA /* SKNode+SKTDebugDraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "SKNode+SKTDebugDraw.m"; path = "../../../SKTUtils/SKNode+SKTDebugDraw.m"; sourceTree = "<group>"; };
+		D065C7F722D7318A00AE96CA /* SKTAudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKTAudio.h; path = ../../../SKTUtils/SKTAudio.h; sourceTree = "<group>"; };
+		D065C7F822D7318A00AE96CA /* SKTEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKTEffects.m; path = ../../../SKTUtils/SKTEffects.m; sourceTree = "<group>"; };
+		D065C7F922D7318B00AE96CA /* SKAction+SKTSpecialEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "SKAction+SKTSpecialEffects.m"; path = "../../../SKTUtils/SKAction+SKTSpecialEffects.m"; sourceTree = "<group>"; };
+		D065C7FA22D7318B00AE96CA /* SKTUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKTUtils.h; path = ../../../SKTUtils/SKTUtils.h; sourceTree = "<group>"; };
+		D065C7FB22D7318B00AE96CA /* SKAction+SKTSpecialEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SKAction+SKTSpecialEffects.h"; path = "../../../SKTUtils/SKAction+SKTSpecialEffects.h"; sourceTree = "<group>"; };
+		D065C7FC22D7318B00AE96CA /* SKTEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKTEffects.h; path = ../../../SKTUtils/SKTEffects.h; sourceTree = "<group>"; };
+		D065C7FD22D7318B00AE96CA /* SKTTimingFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKTTimingFunctions.h; path = ../../../SKTUtils/SKTTimingFunctions.h; sourceTree = "<group>"; };
+		D065C7FE22D7318B00AE96CA /* SKEmitterNode+SKTExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "SKEmitterNode+SKTExtras.m"; path = "../../../SKTUtils/SKEmitterNode+SKTExtras.m"; sourceTree = "<group>"; };
+		D065C7FF22D7318B00AE96CA /* SKAction+SKTExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SKAction+SKTExtras.h"; path = "../../../SKTUtils/SKAction+SKTExtras.h"; sourceTree = "<group>"; };
+		D065C80022D7318B00AE96CA /* SKTAudio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKTAudio.m; path = ../../../SKTUtils/SKTAudio.m; sourceTree = "<group>"; };
+		D065C80122D7318B00AE96CA /* SKTTimingFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKTTimingFunctions.m; path = ../../../SKTUtils/SKTTimingFunctions.m; sourceTree = "<group>"; };
+		D065C80222D7318B00AE96CA /* SKNode+SKTExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "SKNode+SKTExtras.m"; path = "../../../SKTUtils/SKNode+SKTExtras.m"; sourceTree = "<group>"; };
+		D065C80C22D753E700AE96CA /* PBParallaxScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBParallaxScrolling.m; path = "../../../../Downloads/materialy/Rozdziaą 3/3.6/Crazy Frog/Crazy Frog/PBParallaxScrolling/PBParallaxScrolling.m"; sourceTree = "<group>"; };
+		D065C80D22D753E700AE96CA /* PBParallaxScrolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBParallaxScrolling.h; path = "../../../../Downloads/materialy/Rozdziaą 3/3.6/Crazy Frog/Crazy Frog/PBParallaxScrolling/PBParallaxScrolling.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		52356BF31907012E00D9C62F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52356BFC1907012E00D9C62F /* CoreGraphics.framework in Frameworks */,
+				52356BFE1907012E00D9C62F /* UIKit.framework in Frameworks */,
+				52356C001907012E00D9C62F /* SpriteKit.framework in Frameworks */,
+				52356BFA1907012E00D9C62F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52356C1E1907012F00D9C62F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52356C231907012F00D9C62F /* XCTest.framework in Frameworks */,
+				52356C251907012F00D9C62F /* UIKit.framework in Frameworks */,
+				52356C241907012F00D9C62F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		52356BED1907012E00D9C62F = {
+			isa = PBXGroup;
+			children = (
+				52356C011907012E00D9C62F /* Crazy Frog */,
+				52356C281907012F00D9C62F /* Crazy FrogTests */,
+				52356BF81907012E00D9C62F /* Frameworks */,
+				52356BF71907012E00D9C62F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		52356BF71907012E00D9C62F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				52356BF61907012E00D9C62F /* Crazy Frog.app */,
+				52356C211907012F00D9C62F /* Crazy FrogTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		52356BF81907012E00D9C62F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				52356BF91907012E00D9C62F /* Foundation.framework */,
+				52356BFB1907012E00D9C62F /* CoreGraphics.framework */,
+				52356BFD1907012E00D9C62F /* UIKit.framework */,
+				52356BFF1907012E00D9C62F /* SpriteKit.framework */,
+				52356C221907012F00D9C62F /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		52356C011907012E00D9C62F /* Crazy Frog */ = {
+			isa = PBXGroup;
+			children = (
+				D065C7EE22D7309D00AE96CA /* Libs */,
+				52356C391907112800D9C62F /* View */,
+				52356C49190711DE00D9C62F /* Nodes */,
+				52356C48190711D400D9C62F /* Scenes */,
+				52356C47190711CE00D9C62F /* Shared */,
+				52356C3A1907113C00D9C62F /* Model */,
+				52356C381907111B00D9C62F /* Controller */,
+				52356C0A1907012F00D9C62F /* AppDelegate.h */,
+				52356C0B1907012F00D9C62F /* AppDelegate.m */,
+				52356C601907136C00D9C62F /* Resources */,
+				52356C1B1907012F00D9C62F /* Images.xcassets */,
+				52356C021907012E00D9C62F /* Supporting Files */,
+			);
+			path = "Crazy Frog";
+			sourceTree = "<group>";
+		};
+		52356C021907012E00D9C62F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				52356C031907012E00D9C62F /* Crazy Frog-Info.plist */,
+				52356C041907012E00D9C62F /* InfoPlist.strings */,
+				52356C071907012E00D9C62F /* main.m */,
+				52356C091907012E00D9C62F /* Crazy Frog-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		52356C281907012F00D9C62F /* Crazy FrogTests */ = {
+			isa = PBXGroup;
+			children = (
+				52356C2E1907012F00D9C62F /* Crazy_FrogTests.m */,
+				52356C291907012F00D9C62F /* Supporting Files */,
+			);
+			path = "Crazy FrogTests";
+			sourceTree = "<group>";
+		};
+		52356C291907012F00D9C62F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				52356C2A1907012F00D9C62F /* Crazy FrogTests-Info.plist */,
+				52356C2B1907012F00D9C62F /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		52356C381907111B00D9C62F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				52356C3E1907118C00D9C62F /* CFWelcomeViewController.h */,
+				52356C3F1907118C00D9C62F /* CFWelcomeViewController.m */,
+				52356C41190711A700D9C62F /* CFSelectLevelViewController.h */,
+				52356C42190711A700D9C62F /* CFSelectLevelViewController.m */,
+				52356C44190711BF00D9C62F /* CFGameViewController.h */,
+				52356C45190711BF00D9C62F /* CFGameViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		52356C391907112800D9C62F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				52356C0D1907012F00D9C62F /* Main_iPhone.storyboard */,
+				52356C101907012F00D9C62F /* Main_iPad.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		52356C3A1907113C00D9C62F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				52356C3B1907116A00D9C62F /* CFLevelManager.h */,
+				52356C3C1907116A00D9C62F /* CFLevelManager.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		52356C47190711CE00D9C62F /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				52356C6D1907140F00D9C62F /* Macros.h */,
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
+		52356C48190711D400D9C62F /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				52356C4A1907120800D9C62F /* CFLevelScene.h */,
+				52356C4B1907120800D9C62F /* CFLevelScene.m */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		52356C49190711DE00D9C62F /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				52356C4D1907124700D9C62F /* CFFrogNode.h */,
+				52356C4E1907124700D9C62F /* CFFrogNode.m */,
+				52356C50190712AA00D9C62F /* CFFlyNode.h */,
+				52356C51190712AA00D9C62F /* CFFlyNode.m */,
+				52356C53190712C600D9C62F /* CFWaterObstacle.h */,
+				52356C54190712C600D9C62F /* CFWaterObstacle.m */,
+				52356C56190712FF00D9C62F /* CFAwardNode.h */,
+				52356C57190712FF00D9C62F /* CFAwardNode.m */,
+				52356C591907131300D9C62F /* CFFloorNode.h */,
+				52356C5A1907131300D9C62F /* CFFloorNode.m */,
+				52356C5C1907133000D9C62F /* CFWaterNode.h */,
+				52356C5D1907133000D9C62F /* CFWaterNode.m */,
+				D065C7EB22D7276A00AE96CA /* CFBeeNode.h */,
+				D065C7EC22D727A600AE96CA /* CFBeeNode.m */,
+			);
+			name = Nodes;
+			sourceTree = "<group>";
+		};
+		52356C601907136C00D9C62F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D05F564322DCA05A002BBEFB /* Levels */,
+				D05F563822DC9083002BBEFB /* Sound Effects */,
+				52356C6A190713B500D9C62F /* Texture Atlas */,
+				52356C611907138600D9C62F /* Images */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		52356C611907138600D9C62F /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				52356C621907139200D9C62F /* Default-568h@2x.png */,
+				52356C631907139200D9C62F /* Default-Landscape@2x~ipad.png */,
+				52356C641907139200D9C62F /* Default-Landscape~ipad.png */,
+				52356C651907139200D9C62F /* Default@2x.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		52356C6A190713B500D9C62F /* Texture Atlas */ = {
+			isa = PBXGroup;
+			children = (
+				52356C6B190713DB00D9C62F /* frog.atlas */,
+			);
+			name = "Texture Atlas";
+			sourceTree = "<group>";
+		};
+		D05F563822DC9083002BBEFB /* Sound Effects */ = {
+			isa = PBXGroup;
+			children = (
+				D05F563A22DC90AE002BBEFB /* eat.wav */,
+				D05F563C22DC90AE002BBEFB /* frog.m4a */,
+				D05F563922DC90AE002BBEFB /* lost.m4a */,
+				D05F563B22DC90AE002BBEFB /* win.m4a */,
+			);
+			name = "Sound Effects";
+			sourceTree = "<group>";
+		};
+		D05F564322DCA05A002BBEFB /* Levels */ = {
+			isa = PBXGroup;
+			children = (
+				D05F564422DCA081002BBEFB /* Level1.plist */,
+				D05F564522DCA081002BBEFB /* Level2.plist */,
+				D05F564922DCA082002BBEFB /* Level3.plist */,
+				D05F564622DCA081002BBEFB /* Level4.plist */,
+				D05F564822DCA082002BBEFB /* Level5.plist */,
+				D05F564722DCA082002BBEFB /* Level6.plist */,
+			);
+			name = Levels;
+			sourceTree = "<group>";
+		};
+		D065C7EE22D7309D00AE96CA /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				D065C80B22D7539F00AE96CA /* PBParallaxScrolling */,
+				D065C7F122D7314100AE96CA /* SKUtils */,
+			);
+			name = Libs;
+			sourceTree = "<group>";
+		};
+		D065C7F122D7314100AE96CA /* SKUtils */ = {
+			isa = PBXGroup;
+			children = (
+				D065C7FF22D7318B00AE96CA /* SKAction+SKTExtras.h */,
+				D065C7F222D7318A00AE96CA /* SKAction+SKTExtras.m */,
+				D065C7FB22D7318B00AE96CA /* SKAction+SKTSpecialEffects.h */,
+				D065C7F922D7318B00AE96CA /* SKAction+SKTSpecialEffects.m */,
+				D065C7F322D7318A00AE96CA /* SKEmitterNode+SKTExtras.h */,
+				D065C7FE22D7318B00AE96CA /* SKEmitterNode+SKTExtras.m */,
+				D065C7F522D7318A00AE96CA /* SKNode+SKTDebugDraw.h */,
+				D065C7F622D7318A00AE96CA /* SKNode+SKTDebugDraw.m */,
+				D065C7F422D7318A00AE96CA /* SKNode+SKTExtras.h */,
+				D065C80222D7318B00AE96CA /* SKNode+SKTExtras.m */,
+				D065C7F722D7318A00AE96CA /* SKTAudio.h */,
+				D065C80022D7318B00AE96CA /* SKTAudio.m */,
+				D065C7FC22D7318B00AE96CA /* SKTEffects.h */,
+				D065C7F822D7318A00AE96CA /* SKTEffects.m */,
+				D065C7FD22D7318B00AE96CA /* SKTTimingFunctions.h */,
+				D065C80122D7318B00AE96CA /* SKTTimingFunctions.m */,
+				D065C7FA22D7318B00AE96CA /* SKTUtils.h */,
+			);
+			name = SKUtils;
+			sourceTree = "<group>";
+		};
+		D065C80B22D7539F00AE96CA /* PBParallaxScrolling */ = {
+			isa = PBXGroup;
+			children = (
+				D065C80D22D753E700AE96CA /* PBParallaxScrolling.h */,
+				D065C80C22D753E700AE96CA /* PBParallaxScrolling.m */,
+			);
+			name = PBParallaxScrolling;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		52356BF51907012E00D9C62F /* Crazy Frog */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52356C321907012F00D9C62F /* Build configuration list for PBXNativeTarget "Crazy Frog" */;
+			buildPhases = (
+				52356BF21907012E00D9C62F /* Sources */,
+				52356BF31907012E00D9C62F /* Frameworks */,
+				52356BF41907012E00D9C62F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Crazy Frog";
+			productName = "Crazy Frog";
+			productReference = 52356BF61907012E00D9C62F /* Crazy Frog.app */;
+			productType = "com.apple.product-type.application";
+		};
+		52356C201907012F00D9C62F /* Crazy FrogTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52356C351907012F00D9C62F /* Build configuration list for PBXNativeTarget "Crazy FrogTests" */;
+			buildPhases = (
+				52356C1D1907012F00D9C62F /* Sources */,
+				52356C1E1907012F00D9C62F /* Frameworks */,
+				52356C1F1907012F00D9C62F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				52356C271907012F00D9C62F /* PBXTargetDependency */,
+			);
+			name = "Crazy FrogTests";
+			productName = "Crazy FrogTests";
+			productReference = 52356C211907012F00D9C62F /* Crazy FrogTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		52356BEE1907012E00D9C62F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Maciej Cupial";
+				TargetAttributes = {
+					52356C201907012F00D9C62F = {
+						TestTargetID = 52356BF51907012E00D9C62F;
+					};
+				};
+			};
+			buildConfigurationList = 52356BF11907012E00D9C62F /* Build configuration list for PBXProject "ObjectiveC_CrazyFrogGame" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				en,
+				Base,
+			);
+			mainGroup = 52356BED1907012E00D9C62F;
+			productRefGroup = 52356BF71907012E00D9C62F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				52356BF51907012E00D9C62F /* Crazy Frog */,
+				52356C201907012F00D9C62F /* Crazy FrogTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		52356BF41907012E00D9C62F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52356C691907139200D9C62F /* Default@2x.png in Resources */,
+				52356C681907139200D9C62F /* Default-Landscape~ipad.png in Resources */,
+				D05F564C22DCA082002BBEFB /* Level4.plist in Resources */,
+				52356C1C1907012F00D9C62F /* Images.xcassets in Resources */,
+				D05F564A22DCA082002BBEFB /* Level1.plist in Resources */,
+				52356C121907012F00D9C62F /* Main_iPad.storyboard in Resources */,
+				52356C0F1907012F00D9C62F /* Main_iPhone.storyboard in Resources */,
+				D05F563E22DC90AE002BBEFB /* eat.wav in Resources */,
+				52356C661907139200D9C62F /* Default-568h@2x.png in Resources */,
+				52356C061907012E00D9C62F /* InfoPlist.strings in Resources */,
+				52356C671907139200D9C62F /* Default-Landscape@2x~ipad.png in Resources */,
+				D05F563F22DC90AE002BBEFB /* win.m4a in Resources */,
+				D05F564B22DCA082002BBEFB /* Level2.plist in Resources */,
+				D05F564F22DCA082002BBEFB /* Level3.plist in Resources */,
+				D05F564D22DCA082002BBEFB /* Level6.plist in Resources */,
+				D05F563D22DC90AE002BBEFB /* lost.m4a in Resources */,
+				D05F564022DC90AE002BBEFB /* frog.m4a in Resources */,
+				52356C6C190713DB00D9C62F /* frog.atlas in Resources */,
+				D05F564E22DCA082002BBEFB /* Level5.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52356C1F1907012F00D9C62F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52356C2D1907012F00D9C62F /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		52356BF21907012E00D9C62F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52356C52190712AA00D9C62F /* CFFlyNode.m in Sources */,
+				52356C55190712C600D9C62F /* CFWaterObstacle.m in Sources */,
+				52356C43190711A700D9C62F /* CFSelectLevelViewController.m in Sources */,
+				D065C80522D7318B00AE96CA /* SKTEffects.m in Sources */,
+				52356C401907118C00D9C62F /* CFWelcomeViewController.m in Sources */,
+				D065C80722D7318B00AE96CA /* SKEmitterNode+SKTExtras.m in Sources */,
+				52356C3D1907116A00D9C62F /* CFLevelManager.m in Sources */,
+				D065C80A22D7318B00AE96CA /* SKNode+SKTExtras.m in Sources */,
+				52356C5E1907133000D9C62F /* CFWaterNode.m in Sources */,
+				D065C80422D7318B00AE96CA /* SKNode+SKTDebugDraw.m in Sources */,
+				D065C80922D7318B00AE96CA /* SKTTimingFunctions.m in Sources */,
+				D065C80822D7318B00AE96CA /* SKTAudio.m in Sources */,
+				52356C5B1907131300D9C62F /* CFFloorNode.m in Sources */,
+				D065C7ED22D727A600AE96CA /* CFBeeNode.m in Sources */,
+				52356C0C1907012F00D9C62F /* AppDelegate.m in Sources */,
+				52356C4F1907124700D9C62F /* CFFrogNode.m in Sources */,
+				52356C58190712FF00D9C62F /* CFAwardNode.m in Sources */,
+				52356C081907012E00D9C62F /* main.m in Sources */,
+				D065C80E22D753E700AE96CA /* PBParallaxScrolling.m in Sources */,
+				D065C80322D7318B00AE96CA /* SKAction+SKTExtras.m in Sources */,
+				52356C46190711BF00D9C62F /* CFGameViewController.m in Sources */,
+				52356C4C1907120800D9C62F /* CFLevelScene.m in Sources */,
+				D065C80622D7318B00AE96CA /* SKAction+SKTSpecialEffects.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52356C1D1907012F00D9C62F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52356C2F1907012F00D9C62F /* Crazy_FrogTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		52356C271907012F00D9C62F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52356BF51907012E00D9C62F /* Crazy Frog */;
+			targetProxy = 52356C261907012F00D9C62F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		52356C041907012E00D9C62F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52356C051907012E00D9C62F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		52356C0D1907012F00D9C62F /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52356C0E1907012F00D9C62F /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		52356C101907012F00D9C62F /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52356C111907012F00D9C62F /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		52356C2B1907012F00D9C62F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52356C2C1907012F00D9C62F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		52356C301907012F00D9C62F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		52356C311907012F00D9C62F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		52356C331907012F00D9C62F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Crazy Frog/Crazy Frog-Prefix.pch";
+				INFOPLIST_FILE = "Crazy Frog/Crazy Frog-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		52356C341907012F00D9C62F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Crazy Frog/Crazy Frog-Prefix.pch";
+				INFOPLIST_FILE = "Crazy Frog/Crazy Frog-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		52356C361907012F00D9C62F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Crazy Frog.app/Crazy Frog";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Crazy Frog/Crazy Frog-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Crazy FrogTests/Crazy FrogTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		52356C371907012F00D9C62F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Crazy Frog.app/Crazy Frog";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Crazy Frog/Crazy Frog-Prefix.pch";
+				INFOPLIST_FILE = "Crazy FrogTests/Crazy FrogTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		52356BF11907012E00D9C62F /* Build configuration list for PBXProject "ObjectiveC_CrazyFrogGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52356C301907012F00D9C62F /* Debug */,
+				52356C311907012F00D9C62F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52356C321907012F00D9C62F /* Build configuration list for PBXNativeTarget "Crazy Frog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52356C331907012F00D9C62F /* Debug */,
+				52356C341907012F00D9C62F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52356C351907012F00D9C62F /* Build configuration list for PBXNativeTarget "Crazy FrogTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52356C361907012F00D9C62F /* Debug */,
+				52356C371907012F00D9C62F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 52356BEE1907012E00D9C62F /* Project object */;
+}
