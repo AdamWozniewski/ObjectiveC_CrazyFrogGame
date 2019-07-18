@@ -5,6 +5,7 @@ static const uint32_t kBeeCategory               =  0x1 << 4;
 static const uint32_t kWaterObstacleCategory     =  0x1 << 5;
 static const uint32_t kFloorCategory             =  0x1 << 6;
 static const uint32_t kWaterCategory             =  0x1 << 7;
+static const uint32_t kAwardCategory             =  0x1 << 8;
 
 #import "CFLevelScene.h"
 #import "CFFrogNode.h"
@@ -62,7 +63,7 @@ static const uint32_t kWaterCategory             =  0x1 << 7;
     self.levelDistance = 5000;
     CGFloat speed = 4;
     self.speed = IS_IPAD() ? speed : speed * 0.75;
-    self.numberOfFlies = 15;
+    self.numberOfFlies = 10;
     self.numberOfWaterObstacles = 3;
     self.numberOfBadBees = 15;
     self.isFloor = NO;
@@ -79,6 +80,7 @@ static const uint32_t kWaterCategory             =  0x1 << 7;
     [self addChild: parallax];
     [self createFrog];
     [self createFloor];
+    [self createAward];
 }
 - (void) createFrog {
     self.frog = [CFFrogNode new];
@@ -99,6 +101,14 @@ static const uint32_t kWaterCategory             =  0x1 << 7;
     [self.frog jump];
 }
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    for (UITouch *touch in touches) {
+        CGPoint location = [touch locationInNode: self];
+        [self enumerateChildNodesWithName: @"Award" usingBlock: ^(SKNode *node, BOOL *stop) {
+            if ([node containsPoint: location]) {
+                [self.delegate eventFinishedLevel];
+            }
+        }];
+    }
     [self.frog eat];
 }
 
@@ -122,6 +132,7 @@ static const uint32_t kWaterCategory             =  0x1 << 7;
     }
     [self updateObstacles: currentTime];
     [self.parallaxBackground update: currentTime];
+    [self updateAward: currentTime];
 }
 
 -(void) createFlyWithLocation: (CGPoint) location {
@@ -309,5 +320,37 @@ static const uint32_t kWaterCategory             =  0x1 << 7;
     [water runAction: [SKAction repeatActionForever: moveFloor]];
     
     self.water = water;
+}
+- (void) createAward {
+//    SKSpriteNode *award = [SKSpriteNode spriteNodeWithImageNamed: [NSString stringWithFormat: @"Award-%i", [[[self.delegate levelData] objectForKey: kLevelPrefix] integerValue]]];
+    SKSpriteNode *award = [SKSpriteNode spriteNodeWithImageNamed: [NSString stringWithFormat: @"Award-%i", 1]];
+    award.position = CGPointMake(self.size.width * 1.3, self.size.height * 0.5);
+    [award setName: @"Award"];
+    [award setPhysicsBody: [SKPhysicsBody bodyWithRectangleOfSize: award.size]];
+    award.physicsBody.affectedByGravity = NO;
+    award.physicsBody.dynamic = YES;
+    award.physicsBody.categoryBitMask = kAwardCategory;
+    award.physicsBody.contactTestBitMask = kCharacterCategory;
+    award.physicsBody.collisionBitMask = kWaterCategory;
+    self.award = award;
+}
+
+- (void) updateAward: (NSTimeInterval) currentTime {
+    if (![self childNodeWithName: @"Fly"]) {
+        if (![self.award parent]) {
+            [self addChild: self.award];
+        } else {
+            CGPoint position = self.award.position;
+            if (position.x < self.frame.size.width * 0.5) {
+                return;
+            }
+            CGFloat move = self.speed * 0.5;
+            position.x = self.award.position.x - move;
+            self.award.position = position;
+            if (![self.delegate isMinimumScores]) {
+                [self.award setTexture: [SKTexture textureWithImage: [UIImage imageNamed: @"TryAgain"]]];
+            }
+        }
+    }
 }
 @end

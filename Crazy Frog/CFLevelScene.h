@@ -23,10 +23,12 @@
 @property (nonatomic, strong) NSMutableArray* badBeesObstacles;
 @property (nonatomic, strong) PBParallaxScrolling* parallaxBackground;
 @property (nonatomic, weak) id <SceneDelegate> delegate;
+@property (nonatomic, strong) SKSpriteNode *award;
 
 -(id) initWithSize: (CGSize)size andLevelNumber: (NSInteger)levelNumber;
 -(void) initializeGameWithLevel: (NSInteger) levelNumber;
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 -(void) jumpAction;
 -(void) startGame;
+-(void) updateAward: (NSTimeInterval) currentTime;
 @end

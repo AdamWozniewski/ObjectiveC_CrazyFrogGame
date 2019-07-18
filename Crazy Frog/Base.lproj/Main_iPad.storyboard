@@ -21,6 +21,117 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view alpha="0.89999997615814209" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pcy-09-GMI" userLabel="PauseView">
+                                <rect key="frame" x="0.0" y="10" width="1024" height="748"/>
+                                <subviews>
+                                    <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LevelCleared" translatesAutoresizingMaskIntoConstraints="NO" id="aDh-mW-dEI" userLabel="LevelCleared">
+                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Os-kV-UJp">
+                                        <rect key="frame" x="564" y="269" width="230" height="230"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="230" id="LTb-Ij-23v"/>
+                                            <constraint firstAttribute="height" constant="230" id="jKn-BT-ufn"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" image="PlayBlue">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SFL-MS-YmB">
+                                        <rect key="frame" x="20" y="20" width="130" height="120"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="HBP-Oo-yz9"/>
+                                            <constraint firstAttribute="width" constant="130" id="y6h-Qy-gWL"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" image="Back">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i49-di-nox">
+                                        <rect key="frame" x="736" y="628" width="130" height="120"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="0XV-jf-fOa"/>
+                                            <constraint firstAttribute="width" constant="130" id="uME-fM-pJE"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" image="VolumeOn">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d2S-Sg-DVb">
+                                        <rect key="frame" x="874" y="628" width="130" height="120"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="130" id="Cd9-G0-K1u"/>
+                                            <constraint firstAttribute="height" constant="120" id="bsa-4v-gGW"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" image="Replay">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 / 100 x" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sri-HC-Pyd">
+                                        <rect key="frame" x="0.0" y="555" width="300" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="OA6-ce-U55"/>
+                                            <constraint firstAttribute="height" constant="80" id="SWU-vM-t6g"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="45"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High Score: 7834" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYm-tn-jfy">
+                                        <rect key="frame" x="54" y="643" width="300" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="ash-qo-hh1"/>
+                                            <constraint firstAttribute="height" constant="50" id="l9M-wa-UMn"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="30"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Award-1" translatesAutoresizingMaskIntoConstraints="NO" id="fnf-Sq-dyj">
+                                        <rect key="frame" x="89" y="269" width="230" height="230"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="230" id="SoN-yq-YsA"/>
+                                            <constraint firstAttribute="height" constant="230" id="hSy-q0-l7r"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FlyBig" translatesAutoresizingMaskIntoConstraints="NO" id="vnq-N8-1IA">
+                                        <rect key="frame" x="308" y="513" width="140" height="140"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="140" id="a0S-zL-9Mp"/>
+                                            <constraint firstAttribute="width" constant="140" id="gnC-50-yit"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="sri-HC-Pyd" firstAttribute="leading" secondItem="Pcy-09-GMI" secondAttribute="leading" id="0Ef-5E-4E1"/>
+                                    <constraint firstItem="SFL-MS-YmB" firstAttribute="top" secondItem="Pcy-09-GMI" secondAttribute="top" constant="20" id="6zB-ID-4bR"/>
+                                    <constraint firstItem="fnf-Sq-dyj" firstAttribute="leading" secondItem="Pcy-09-GMI" secondAttribute="leading" constant="89" id="7PY-Jg-RTt"/>
+                                    <constraint firstAttribute="bottom" secondItem="aDh-mW-dEI" secondAttribute="bottom" id="H0U-hh-koM"/>
+                                    <constraint firstItem="vnq-N8-1IA" firstAttribute="leading" secondItem="sri-HC-Pyd" secondAttribute="trailing" constant="8" id="KNi-d6-xOa"/>
+                                    <constraint firstItem="aDh-mW-dEI" firstAttribute="leading" secondItem="Pcy-09-GMI" secondAttribute="leading" id="Mhu-Tl-WQn"/>
+                                    <constraint firstItem="d2S-Sg-DVb" firstAttribute="leading" secondItem="i49-di-nox" secondAttribute="trailing" constant="8" id="Ow0-CP-Ee8"/>
+                                    <constraint firstItem="fnf-Sq-dyj" firstAttribute="centerX" secondItem="wYm-tn-jfy" secondAttribute="centerX" id="Re4-1W-6gy"/>
+                                    <constraint firstAttribute="bottom" secondItem="wYm-tn-jfy" secondAttribute="bottom" constant="75" id="ahj-EH-dnA"/>
+                                    <constraint firstItem="SFL-MS-YmB" firstAttribute="leading" secondItem="Pcy-09-GMI" secondAttribute="leading" constant="20" id="bQo-PF-PIb"/>
+                                    <constraint firstAttribute="trailing" secondItem="aDh-mW-dEI" secondAttribute="trailing" id="gBR-P0-2Wl"/>
+                                    <constraint firstAttribute="centerY" secondItem="fnf-Sq-dyj" secondAttribute="centerY" id="irc-t5-cZp"/>
+                                    <constraint firstAttribute="centerY" secondItem="8Os-kV-UJp" secondAttribute="centerY" id="knu-q0-VsJ"/>
+                                    <constraint firstItem="8Os-kV-UJp" firstAttribute="top" secondItem="Pcy-09-GMI" secondAttribute="top" constant="269" id="rAB-6Z-h0b"/>
+                                    <constraint firstAttribute="bottom" secondItem="d2S-Sg-DVb" secondAttribute="bottom" constant="20" id="sid-Ok-PbA"/>
+                                    <constraint firstItem="vnq-N8-1IA" firstAttribute="top" secondItem="fnf-Sq-dyj" secondAttribute="bottom" constant="14" id="t05-Lk-TFD"/>
+                                    <constraint firstAttribute="bottom" secondItem="i49-di-nox" secondAttribute="bottom" constant="20" id="umA-aU-jp1"/>
+                                    <constraint firstItem="8Os-kV-UJp" firstAttribute="leading" secondItem="fnf-Sq-dyj" secondAttribute="trailing" constant="245" id="wYe-HF-JXw"/>
+                                    <constraint firstItem="sri-HC-Pyd" firstAttribute="top" secondItem="fnf-Sq-dyj" secondAttribute="bottom" constant="56" id="yyg-Yw-2xB"/>
+                                    <constraint firstAttribute="trailing" secondItem="d2S-Sg-DVb" secondAttribute="trailing" constant="20" id="zWa-6F-NvT"/>
+                                    <constraint firstItem="aDh-mW-dEI" firstAttribute="top" secondItem="Pcy-09-GMI" secondAttribute="top" id="znM-rt-LAF"/>
+                                </constraints>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9o7-Zy-Knb">
                                 <rect key="frame" x="28" y="40" width="130" height="120"/>
                                 <constraints>
@@ -334,14 +445,19 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Award-1" width="230" height="230"/>
         <image name="Awards" width="130" height="120"/>
         <image name="Back" width="130" height="120"/>
         <image name="Facebook" width="130" height="120"/>
         <image name="Fly" width="30" height="30"/>
+        <image name="FlyBig" width="140" height="140"/>
         <image name="Jump" width="130" height="120"/>
+        <image name="LevelCleared" width="1024" height="768"/>
         <image name="MainView" width="1024" height="768"/>
         <image name="Play" width="230" height="230"/>
+        <image name="PlayBlue" width="230" height="230"/>
         <image name="Pool" width="300" height="315"/>
+        <image name="Replay" width="130" height="120"/>
         <image name="Sea" width="300" height="315"/>
         <image name="SelectWorld" width="1024" height="768"/>
         <image name="StarBrown" width="150" height="150"/>

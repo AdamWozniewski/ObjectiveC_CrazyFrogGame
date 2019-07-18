@@ -28,17 +28,19 @@ NSInteger const kFlyPoints = 1;
     [self configureScene];
     self.levelScene.delegate = self;
 
+    [self showSceneAndPlay];
     [self.levelScene startGame];
     
     self.scoreLabel.textColor = [SKColor blackColor];
     self.scoreLabel.font = [UIFont fontWithName: @"Chalkboard-Bold" size: (IS_IPAD() ? 34.0 : 16.0)];
+    self.pauseView.hidden = YES; // scena domyslnie jest ukryta
 }
 
 
-- (void)dealloc {
+- (void) dealloc {
 }
 
-- (void)configureScene {
+- (void) configureScene {
     SKView* skView = (SKView *)self.view;
     skView.showsFPS = YES;
     skView.showsNodeCount = YES;
@@ -48,6 +50,10 @@ NSInteger const kFlyPoints = 1;
     self.levelScene = [[CFLevelScene alloc] initWithSize: skView.bounds.size andLevelNumber: self.levelNumber];
     self.levelScene.scaleMode = SKSceneScaleModeFill;
     [skView presentScene: self.levelScene];
+    [self updateScores];
+    
+//    self.awardImagepauseView.image = [UIImage imageNamed: [NSString stringWithFormat: @"Award-%i", [[self.levelData objectForKey: kLevelPrefix] intValue]]];
+    self.awardImagepauseView.image = [UIImage imageNamed: [NSString stringWithFormat: @"Award-%i", 1]];
 }
 
 #pragma mark Game Actions
@@ -64,6 +70,8 @@ NSInteger const kFlyPoints = 1;
 
 -(void) eventWasted {
     [self.audioManager playSoundEffect: @"frog.m4a"];
+    self.isGameOver = YES;
+    [self pauseAction];
 }
 -(void) eventKilled {
     [self.audioManager playSoundEffect: @"eat.m4a"];
@@ -71,18 +79,111 @@ NSInteger const kFlyPoints = 1;
     [self updateScores];
 }
 -(void) eventFinishLevel {
-    [self.audioManager playSoundEffect: @"win.m4a"];
+    if (!self.isGameOver) {
+        if (![self isMinimumScores]) {
+            [self.audioManager playSoundEffect: @"lost.m4a"];
+            [self pauseAction];
+            [self showViewWithAward: NO];
+        } else {
+            [self.audioManager playSoundEffect: @"win.m4a"];
+            [self pauseAction];
+            [self showViewWithAward: YES];
+        }
+        self.isGameOver = YES;
+    }
 }
 -(NSDictionary *) levelData {
     return [self.levelManager levelInformation: self.levelNumber];
 }
+- (void) eventFinishedLevel {
+    if (!self.isGameOver) {
+        if (![self isMinimumScores]) {
+            [self.audioManager playSoundEffect: @"lost.m4a"];
+            [self eventWasted];
+        }
+        else {
+            [self.audioManager playSoundEffect: @"win.m4a"];
+        }
+        self.isGameOver = YES;
+    }
+}
 -(BOOL) isMinimumScores {
+    if(([[self.levelData objectForKey: kNumberOfFlies] integerValue] * 0.5) <= self.levelManager.currentScores) {
+        return YES;
+    }
     return NO;
 }
 
 - (void) updateScores {
-    self.scoreLabel.text = [NSString stringWithFormat: @"%li / %li", (long) self.levelManager.currentScores, [[[self levelData] objectForKey: kNumberOfFlies] longValue]];
-    
+//    self.scoreLabel.text = [NSString stringWithFormat: @"%li / %li", (long) self.levelManager.currentScores, [[[self levelData] objectForKey: kNumberOfFlies] longValue]];
+    self.scoreLabel.text = [NSString stringWithFormat: @"%li / %li", (long) self.levelManager.currentScores, (long)12];
     [self.levelManager saveHighScore: self.levelManager.currentScores];
+    
+    self.highScoreLabelPauseView.text = [NSString stringWithFormat: @"Najwyższy wynik: %li", (long) [self.levelManager highScore]];
+//    self.scoreLabelPauseView.text = [NSString stringWithFormat: @"%li / %li x", (long)self.levelManager currentScores, [[[self levelData] objectForKey: kNumberOfFlies] longValue]];
+    self.scoreLabelPauseView.text = [NSString stringWithFormat: @"%li / %li x", (long)self.levelManager.currentScores, (long)12];
+}
+-(IBAction) pauseAction {
+    [self uiForPause];
+    [self showViewWithAward: NO];
+}
+-(void) uiForPause {
+    self.levelScene.paused = YES;
+    self.pauseView.hidden = NO;
+    self.pauseButton.hidden = YES;
+    self.jumpButton.hidden = YES;
+}
+-(void) showViewWithAward: (BOOL) isAward {
+    if (!isAward) {
+        self.levelClearedImageView.hidden = YES;
+        self.awardImagepauseView.hidden = YES;
+        self.pauseView.alpha = 0.9;
+    } else {
+        self.levelClearedImageView.hidden = NO;
+        self.awardImagepauseView.hidden = NO;
+        self.pauseView.alpha = 1.0;
+    }
+}
+-(IBAction)repeatGameAction {
+    [self configureScene];
+    [self showSceneAndPlay];
+    [self.levelScene startGame];
+}
+-(void) resumeAction {
+    if (self.isGameOver) {
+        if (!self.awardImagepauseView.hidden) {
+            [self nextLevelAction];
+        }
+        if (self.levelNumber > [self.levelManager numberOfLevels]) return;
+        [self repeatGameAction];
+        self.isGameOver = NO;
+    }
+    [self showSceneAndPlay];
+}
+- (void) nextLevelAction {
+    self.levelNumber++;
+    if (self.levelNumber > [self.levelManager numberOfLevels]) {
+        [self backButtonTapped];
+        return;
+    }
+    [self.levelManager saveLevelToUnblockedList: self.levelNumber];
+}
+-(void) changeVolumeAction {
+    self.audioManager.isMusicOn = !self.audioManager.isMusicOn;
+    [self checkVolumeButton];
+}
+-(void) checkVolumeButton {
+    if (self.audioManager.isMusicOn) {
+        [self.volumeButton setImage:[UIImage imageNamed: @"VolumeOn"] forState: UIControlStateNormal];
+    } else {
+        [self.volumeButton setImage:[UIImage imageNamed: @"VolumeOff"] forState: UIControlStateNormal];
+    }
+}
+-(void) showSceneAndPlay {
+    self.levelScene.view.paused = NO;
+    self.pauseView.hidden = YES;
+    self.pauseButton.hidden = NO;
+    [self.audioManager resumeBackgroundMusic];
+    self.jumpButton.hidden = NO;
 }
 @end
