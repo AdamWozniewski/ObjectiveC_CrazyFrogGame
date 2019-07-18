@@ -4,7 +4,7 @@
 -(instancetype) initWithObstacleNumber: (NSUInteger)number {
     if (self = [super init]) {
         self = [CFWaterObstacle spriteNodeWithImageNamed:
-                [NSString stringWithFormat:@"WaterObstacle-%i", number]];
+                [NSString stringWithFormat: @"WaterObstacle-%i", number]];
         self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize: self.size];
     }
     return self;

@@ -49,15 +49,38 @@
                                     <action selector="jumpAction" destination="zXU-R7-tO3" eventType="touchUpInside" id="QWJ-7Z-1xA"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 / 60" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gX-Qv-D1l">
+                                <rect key="frame" x="958" y="70" width="46" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="EKO-pf-nSt"/>
+                                    <constraint firstAttribute="height" constant="21" id="Zhb-Aa-Ldg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Fly" translatesAutoresizingMaskIntoConstraints="NO" id="RzL-8c-Uhq">
+                                <rect key="frame" x="958" y="20" width="46" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="Q4b-bD-aEf"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="7gX-Qv-D1l" firstAttribute="top" secondItem="RzL-8c-Uhq" secondAttribute="bottom" constant="8" symbolic="YES" id="3tG-LC-54v"/>
+                            <constraint firstItem="2fI-f3-knO" firstAttribute="top" secondItem="7gX-Qv-D1l" secondAttribute="bottom" constant="677" id="6tI-aj-sKS"/>
+                            <constraint firstItem="7gX-Qv-D1l" firstAttribute="trailing" secondItem="RzL-8c-Uhq" secondAttribute="trailing" id="Ffj-Dp-VdE"/>
                             <constraint firstItem="9o7-Zy-Knb" firstAttribute="leading" secondItem="r3b-Ps-AcF" secondAttribute="leading" constant="28" id="OYn-ei-AbY"/>
+                            <constraint firstItem="7gX-Qv-D1l" firstAttribute="trailing" secondItem="r3b-Ps-AcF" secondAttribute="trailingMargin" id="d8D-6q-77A"/>
                             <constraint firstItem="9o7-Zy-Knb" firstAttribute="top" secondItem="HCz-Vz-eyH" secondAttribute="bottom" constant="20" id="tSl-Lo-BKO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="CVV-zT-Jbf"/>
                     <size key="freeformSize" width="1024" height="768"/>
+                    <connections>
+                        <outlet property="scoreLabel" destination="7gX-Qv-D1l" id="rOQ-eq-Kt8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oxY-a4-bH5" sceneMemberID="firstResponder"/>
             </objects>
@@ -314,6 +337,7 @@
         <image name="Awards" width="130" height="120"/>
         <image name="Back" width="130" height="120"/>
         <image name="Facebook" width="130" height="120"/>
+        <image name="Fly" width="30" height="30"/>
         <image name="Jump" width="130" height="120"/>
         <image name="MainView" width="1024" height="768"/>
         <image name="Play" width="230" height="230"/>

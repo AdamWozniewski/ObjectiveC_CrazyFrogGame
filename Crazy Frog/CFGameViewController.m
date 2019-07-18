@@ -2,6 +2,7 @@
 #import "CFLevelScene.h"
 #import "SKTAudio.h"
 #import "CFLevelManager.h"
+#import "Macros.h"
 
 NSString* const kViewTransformChanged = @"viewTransformChanged";
 NSString* const kLevelDistance = @"levelDistance";
@@ -14,21 +15,23 @@ NSString* const kLevelPrefix = @"levelPrefix";
 NSString* const kPrizeType = @"prizeType";
 NSInteger const kFlyPoints = 1;
 
-@interface CFGameViewController ()
+@interface CFGameViewController () <SceneDelegate>
 @end
 
 @implementation CFGameViewController
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     self.audioManager = [SKTAudio sharedInstance];
     self.audioManager.isMusicOn = YES;
+
     self.levelManager = [CFLevelManager instance];
+
     [self configureScene];
     self.levelScene.delegate = self;
-    // Start game
+
     [self.levelScene startGame];
     
-    [self.levelScene startGame];
+    self.scoreLabel.textColor = [SKColor blackColor];
+    self.scoreLabel.font = [UIFont fontWithName: @"Chalkboard-Bold" size: (IS_IPAD() ? 34.0 : 16.0)];
 }
 
 
@@ -42,7 +45,6 @@ NSInteger const kFlyPoints = 1;
     
     self.levelManager.currentScores = 0;
     
-    NSLog(@"%i", self.levelNumber);
     self.levelScene = [[CFLevelScene alloc] initWithSize: skView.bounds.size andLevelNumber: self.levelNumber];
     self.levelScene.scaleMode = SKSceneScaleModeFill;
     [skView presentScene: self.levelScene];
@@ -65,6 +67,8 @@ NSInteger const kFlyPoints = 1;
 }
 -(void) eventKilled {
     [self.audioManager playSoundEffect: @"eat.m4a"];
+    self.levelManager.currentScores += kFlyPoints;
+    [self updateScores];
 }
 -(void) eventFinishLevel {
     [self.audioManager playSoundEffect: @"win.m4a"];
@@ -74,5 +78,11 @@ NSInteger const kFlyPoints = 1;
 }
 -(BOOL) isMinimumScores {
     return NO;
+}
+
+- (void) updateScores {
+    self.scoreLabel.text = [NSString stringWithFormat: @"%li / %li", (long) self.levelManager.currentScores, [[[self levelData] objectForKey: kNumberOfFlies] longValue]];
+    
+    [self.levelManager saveHighScore: self.levelManager.currentScores];
 }
 @end

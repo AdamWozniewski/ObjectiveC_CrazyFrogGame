@@ -311,7 +311,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HDs-rB-gGf">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HDs-rB-gGf">
                                 <rect key="frame" x="20" y="674" width="75" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="HOS-2J-TCg"/>
@@ -339,25 +339,51 @@
                                     <action selector="backButtonTapped" destination="CAQ-DX-4LT" eventType="touchUpInside" id="I5g-hB-OMv"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 / 60" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRn-rn-9hx">
+                                <rect key="frame" x="958" y="76" width="46" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="wOe-Xo-dGB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fly" translatesAutoresizingMaskIntoConstraints="NO" id="s7I-dS-yBy">
+                                <rect key="frame" x="942" y="35" width="62" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="62" id="kou-67-ZZ4"/>
+                                    <constraint firstAttribute="height" constant="33" id="sCt-Od-ctL"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="s7I-dS-yBy" firstAttribute="trailing" secondItem="AG1-ff-0Xl" secondAttribute="trailingMargin" id="HtY-R3-w8m"/>
+                            <constraint firstItem="hRn-rn-9hx" firstAttribute="trailing" secondItem="s7I-dS-yBy" secondAttribute="trailing" id="I2J-Sw-mza"/>
+                            <constraint firstItem="HDs-rB-gGf" firstAttribute="bottom" secondItem="lbP-0e-2bP" secondAttribute="top" id="Mt0-42-tgb"/>
                             <constraint firstItem="eYX-kG-OGp" firstAttribute="leading" secondItem="AG1-ff-0Xl" secondAttribute="leading" id="QAr-Fv-KXb"/>
+                            <constraint firstItem="s7I-dS-yBy" firstAttribute="top" secondItem="AG1-ff-0Xl" secondAttribute="topMargin" constant="-9" id="UhW-0d-vS6"/>
+                            <constraint firstItem="HDs-rB-gGf" firstAttribute="leading" secondItem="AG1-ff-0Xl" secondAttribute="leadingMargin" id="ZLv-Yg-RS5"/>
+                            <constraint firstItem="hRn-rn-9hx" firstAttribute="top" secondItem="yEV-Ag-bNo" secondAttribute="bottom" constant="32" id="Zil-49-mGv"/>
                             <constraint firstItem="eYX-kG-OGp" firstAttribute="top" secondItem="yEV-Ag-bNo" secondAttribute="bottom" id="niR-yw-3Ck"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="uCJ-FI-CGb"/>
                     <size key="freeformSize" width="1024" height="768"/>
+                    <connections>
+                        <outlet property="scoreLabel" destination="hRn-rn-9hx" id="Nd3-aq-02m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Vq-BM-Ynx" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="499" y="44"/>
+            <point key="canvasLocation" x="498.55072463768118" y="43.526785714285715"/>
         </scene>
     </scenes>
     <resources>
         <image name="Awards" width="45" height="45"/>
         <image name="Back" width="45" height="45"/>
         <image name="Facebook" width="45" height="45"/>
+        <image name="Fly" width="20" height="20"/>
         <image name="Jump" width="45" height="45"/>
         <image name="MainView" width="480" height="320"/>
         <image name="Play" width="85" height="85"/>

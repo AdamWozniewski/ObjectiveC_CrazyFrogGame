@@ -14,13 +14,15 @@ extern NSString* const kLevelPrefix;
 extern NSString* const kPrizeType;
 
 @interface CFGameViewController : UIViewController
-@property(nonatomic, strong) SKTAudio * audioManager;
+@property(nonatomic, strong) SKTAudio *audioManager;
 @property (nonatomic, assign) NSInteger levelNumber;
 @property (nonatomic, strong) CFLevelScene *levelScene;
 @property (nonatomic, strong) CFLevelManager *levelManager;
+@property (nonatomic, weak) IBOutlet UILabel *scoreLabel;
+
 - (id) initWithSize: (CGSize)size andLevelNumber: (NSInteger)levelNumber;
-//- (void) jumpAction;
 - (void) startGame;
-- (IBAction)backButtonTapped;
-- (IBAction)jumpAction;
+- (IBAction) backButtonTapped;
+- (IBAction) jumpAction;
+- (void) updateScores;
 @end
