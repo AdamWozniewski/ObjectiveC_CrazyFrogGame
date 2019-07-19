@@ -4,23 +4,15 @@
 #import "GameKitHelper.h"
 static NSString *iTunesURL = @"https://itunes.apple.com/app/id863461572";
 @interface CFWelcomeViewController ()
-
 @end
 
-
 @implementation CFWelcomeViewController
-
-
 - (id)initWithNibName: (NSString*)nibNameOrNil bundle: (NSBundle*)nibBundleOrNil
 {
     self = [super initWithNibName: nibNameOrNil bundle: nibBundleOrNil];
-    if (self)
-    {
-    }
+    if (self){}
     return self;
 }
-
-
 - (void)viewDidLoad {
     self.audioManager = [SKTAudio sharedInstance];
     [self volumeButtonTapped];
@@ -39,16 +31,10 @@ static NSString *iTunesURL = @"https://itunes.apple.com/app/id863461572";
     }];
     [super viewDidLoad];
 }
-
-
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear: animated];
 }
-
-
-- (void)dealloc {
-}
-
+- (void)dealloc {}
 - (IBAction)twitterButtonTapped {
     if ([SLComposeViewController isAvailableForServiceType: SLServiceTypeTwitter]) {
         SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType: SLServiceTypeTwitter];
@@ -57,8 +43,6 @@ static NSString *iTunesURL = @"https://itunes.apple.com/app/id863461572";
         [self presentViewController: tweetSheet animated: YES completion: nil];
     }
 }
-
-
 - (IBAction)facebookButtonTapped {
     if ([SLComposeViewController isAvailableForServiceType: SLServiceTypeFacebook]) {
         SLComposeViewController *fbSheet = [SLComposeViewController composeViewControllerForServiceType: SLServiceTypeFacebook];
@@ -67,14 +51,10 @@ static NSString *iTunesURL = @"https://itunes.apple.com/app/id863461572";
         [self presentViewController: fbSheet animated: YES completion: nil];
     }
 }
-
-
 - (IBAction)gameCenterButtonTapped {
     if ([GKLocalPlayer localPlayer].isAuthenticated) [[GameKitHelper sharedGameKitHelper] showGKGameCenterViewController: self];
     else self.gameCenterButton.enabled = NO;
 }
-
-
 - (IBAction)volumeButtonTapped {
     self.audioManager.isMusicOn = !self.audioManager.isMusicOn;
     [self checkVoluleButton];

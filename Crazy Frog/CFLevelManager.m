@@ -39,9 +39,10 @@ NSString* const kHighScore = @"kHighScore";
         [[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInteger: score] forKey: kHighScore];
     }
 }
-- (NSInteger) numberOfLevels {
+- (NSInteger)numberOfLevels {
     NSString* bundlePath = [NSString stringWithFormat: @"%@/Levels", [[NSBundle mainBundle] bundlePath]];
-    NSArray* directoryContent = [[NSFileManager defaultManager] contentsOfDirectoryAtPath: bundlePath error: nil];
+    NSArray* directoryContent  = [[NSFileManager defaultManager] contentsOfDirectoryAtPath: bundlePath
+                                                                                     error: nil];
     NSInteger numberOfFileInFolder = [directoryContent  count];
     return numberOfFileInFolder;
 }

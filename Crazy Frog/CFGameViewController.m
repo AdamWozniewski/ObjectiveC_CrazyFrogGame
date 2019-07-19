@@ -40,11 +40,8 @@ NSInteger const kFlyPoints = 1;
     self.scoreLabel.font = [UIFont fontWithName: @"Chalkboard-Bold" size: (IS_IPAD() ? 34.0 : 16.0)];
     self.pauseView.hidden = YES; // scena domyslnie jest ukryta
 }
-
-
 - (void) dealloc {
 }
-
 - (void) configureScene {
     SKView* skView = (SKView *)self.view;
     skView.showsFPS = YES;
@@ -57,10 +54,8 @@ NSInteger const kFlyPoints = 1;
     [skView presentScene: self.levelScene];
     [self updateScores];
     
-//    self.awardImagepauseView.image = [UIImage imageNamed: [NSString stringWithFormat: @"Award-%i", [[self.levelData objectForKey: kLevelPrefix] intValue]]];
-    self.awardImagepauseView.image = [UIImage imageNamed: [NSString stringWithFormat: @"Award-%i", 1]];
-//    [self.audioManager playBackgroundMusic: [NSString stringWithFormat: @"BackgroundMusic-%i.m4a", [[self.levelData objectForKey: kLevelPrefix] intValue]]];
-    [self.audioManager playBackgroundMusic: [NSString stringWithFormat: @"BackgroundMusic-%i.m4a", 1]];
+    self.awardImagepauseView.image = [UIImage imageNamed: [NSString stringWithFormat: @"Award-%i", [[self.levelData objectForKey: kLevelPrefix] intValue]]];
+    [self.audioManager playBackgroundMusic: [NSString stringWithFormat: @"BackgroundMusic-%i.m4a", [[self.levelData objectForKey: kLevelPrefix] intValue]]];
     self.isGameOver = NO;
 }
 
@@ -79,7 +74,7 @@ NSInteger const kFlyPoints = 1;
     [self pauseAction];
 }
 -(void) eventKilled {
-    [self.audioManager playSoundEffect: @"eat.m4a"];
+    [self.audioManager playSoundEffect: @"eat.wav"];
     self.levelManager.currentScores += kFlyPoints;
     [self updateScores];
 }
@@ -119,15 +114,12 @@ NSInteger const kFlyPoints = 1;
     }
     return NO;
 }
-
 - (void) updateScores {
-//    self.scoreLabel.text = [NSString stringWithFormat: @"%li / %li", (long) self.levelManager.currentScores, [[[self levelData] objectForKey: kNumberOfFlies] longValue]];
-    self.scoreLabel.text = [NSString stringWithFormat: @"%li / %li", (long) self.levelManager.currentScores, (long)12];
+    self.scoreLabel.text = [NSString stringWithFormat: @"%li / %li", (long) self.levelManager.currentScores, [[[self levelData] objectForKey: kNumberOfFlies] longValue]];
     [self.levelManager saveHighScore: self.levelManager.currentScores];
     
     self.highScoreLabelPauseView.text = [NSString stringWithFormat: @"Najwyższy wynik: %li", (long) [self.levelManager highScore]];
-//    self.scoreLabelPauseView.text = [NSString stringWithFormat: @"%li / %li x", (long)self.levelManager currentScores, [[[self levelData] objectForKey: kNumberOfFlies] longValue]];
-    self.scoreLabelPauseView.text = [NSString stringWithFormat: @"%li / %li x", (long)self.levelManager.currentScores, (long)12];
+    self.scoreLabelPauseView.text = [NSString stringWithFormat: @"%li / %li x", (long)self.levelManager.currentScores, [[[self levelData] objectForKey: kNumberOfFlies] longValue]];
     [[GameKitHelper sharedGameKitHelper] reportScore: self.levelManager.currentScores forLeaderbordId: @"nasz.klucz.apple.id"];
 }
 -(IBAction) pauseAction {
@@ -141,7 +133,7 @@ NSInteger const kFlyPoints = 1;
     self.pauseButton.hidden = YES;
     self.jumpButton.hidden = YES;
 }
--(void) showViewWithAward: (BOOL) isAward {
+- (void) showViewWithAward: (BOOL) isAward {
     if (!isAward) {
         self.levelClearedImageView.hidden = YES;
         self.awardImagepauseView.hidden = YES;
@@ -152,12 +144,12 @@ NSInteger const kFlyPoints = 1;
         self.pauseView.alpha = 1.0;
     }
 }
--(IBAction)repeatGameAction {
+- (IBAction)repeatGameAction {
     [self configureScene];
     [self showSceneAndPlay];
     [self.levelScene startGame];
 }
--(void) resumeAction {
+- (void) resumeAction {
     if (self.isGameOver) {
         if (!self.awardImagepauseView.hidden) {
             [self nextLevelAction];
@@ -170,7 +162,7 @@ NSInteger const kFlyPoints = 1;
     }
     [self showSceneAndPlay];
 }
-- (void) nextLevelAction {
+- (void)nextLevelAction {
     self.levelNumber += 1;
     if (self.levelNumber > [self.levelManager numberOfLevels]) {
         [self backButtonTapped];
@@ -178,18 +170,18 @@ NSInteger const kFlyPoints = 1;
     }
     [self.levelManager saveLevelToUnblockedList: self.levelNumber];
 }
--(void) changeVolumeAction {
+- (void) changeVolumeAction {
     self.audioManager.isMusicOn = !self.audioManager.isMusicOn;
     [self checkVolumeButton];
 }
--(void) checkVolumeButton {
+- (void) checkVolumeButton {
     if (self.audioManager.isMusicOn) {
         [self.volumeButton setImage:[UIImage imageNamed: @"VolumeOn"] forState: UIControlStateNormal];
     } else {
         [self.volumeButton setImage:[UIImage imageNamed: @"VolumeOff"] forState: UIControlStateNormal];
     }
 }
--(void) showSceneAndPlay {
+- (void) showSceneAndPlay {
     self.pauseView.hidden = YES;
     self.pauseButton.hidden = NO;
     self.jumpButton.hidden = NO;
