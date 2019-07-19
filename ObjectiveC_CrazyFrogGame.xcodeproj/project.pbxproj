@@ -46,16 +46,11 @@
 		D057532222E1998D00D4A586 /* AchievementsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D057531F22E1998D00D4A586 /* AchievementsHelper.m */; };
 		D057532322E1998D00D4A586 /* GameKitHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D057532022E1998D00D4A586 /* GameKitHelper.m */; };
 		D057532522E1A1B800D4A586 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D057532422E1A1B800D4A586 /* iAd.framework */; };
+		D057534322E1DA9C00D4A586 /* Levels in Resources */ = {isa = PBXBuildFile; fileRef = D057534222E1DA9B00D4A586 /* Levels */; };
 		D05F563D22DC90AE002BBEFB /* lost.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D05F563922DC90AE002BBEFB /* lost.m4a */; };
 		D05F563E22DC90AE002BBEFB /* eat.wav in Resources */ = {isa = PBXBuildFile; fileRef = D05F563A22DC90AE002BBEFB /* eat.wav */; };
 		D05F563F22DC90AE002BBEFB /* win.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D05F563B22DC90AE002BBEFB /* win.m4a */; };
 		D05F564022DC90AE002BBEFB /* frog.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D05F563C22DC90AE002BBEFB /* frog.m4a */; };
-		D05F564A22DCA082002BBEFB /* Level1.plist in Resources */ = {isa = PBXBuildFile; fileRef = D05F564422DCA081002BBEFB /* Level1.plist */; };
-		D05F564B22DCA082002BBEFB /* Level2.plist in Resources */ = {isa = PBXBuildFile; fileRef = D05F564522DCA081002BBEFB /* Level2.plist */; };
-		D05F564C22DCA082002BBEFB /* Level4.plist in Resources */ = {isa = PBXBuildFile; fileRef = D05F564622DCA081002BBEFB /* Level4.plist */; };
-		D05F564D22DCA082002BBEFB /* Level6.plist in Resources */ = {isa = PBXBuildFile; fileRef = D05F564722DCA082002BBEFB /* Level6.plist */; };
-		D05F564E22DCA082002BBEFB /* Level5.plist in Resources */ = {isa = PBXBuildFile; fileRef = D05F564822DCA082002BBEFB /* Level5.plist */; };
-		D05F564F22DCA082002BBEFB /* Level3.plist in Resources */ = {isa = PBXBuildFile; fileRef = D05F564922DCA082002BBEFB /* Level3.plist */; };
 		D065C7ED22D727A600AE96CA /* CFBeeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D065C7EC22D727A600AE96CA /* CFBeeNode.m */; };
 		D065C80322D7318B00AE96CA /* SKAction+SKTExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = D065C7F222D7318A00AE96CA /* SKAction+SKTExtras.m */; };
 		D065C80422D7318B00AE96CA /* SKNode+SKTDebugDraw.m in Sources */ = {isa = PBXBuildFile; fileRef = D065C7F622D7318A00AE96CA /* SKNode+SKTDebugDraw.m */; };
@@ -136,16 +131,11 @@
 		D057532022E1998D00D4A586 /* GameKitHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameKitHelper.m; path = "../../../../Downloads/materialy/Rozdziaą 3/3.21/Crazy Frog/Crazy Frog/GameKitHelper/GameKitHelper.m"; sourceTree = "<group>"; };
 		D057532122E1998D00D4A586 /* AchievementsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AchievementsHelper.h; path = "../../../../Downloads/materialy/Rozdziaą 3/3.21/Crazy Frog/Crazy Frog/GameKitHelper/AchievementsHelper.h"; sourceTree = "<group>"; };
 		D057532422E1A1B800D4A586 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		D057534222E1DA9B00D4A586 /* Levels */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Levels; sourceTree = "<group>"; };
 		D05F563922DC90AE002BBEFB /* lost.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = lost.m4a; path = "../../../../Downloads/materialy/Rozdziaą 3/3.8/Crazy Frog/Crazy Frog/Sound Effects/lost.m4a"; sourceTree = "<group>"; };
 		D05F563A22DC90AE002BBEFB /* eat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = eat.wav; path = "../../../../Downloads/materialy/Rozdziaą 3/3.8/Crazy Frog/Crazy Frog/Sound Effects/eat.wav"; sourceTree = "<group>"; };
 		D05F563B22DC90AE002BBEFB /* win.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = win.m4a; path = "../../../../Downloads/materialy/Rozdziaą 3/3.8/Crazy Frog/Crazy Frog/Sound Effects/win.m4a"; sourceTree = "<group>"; };
 		D05F563C22DC90AE002BBEFB /* frog.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = frog.m4a; path = "../../../../Downloads/materialy/Rozdziaą 3/3.8/Crazy Frog/Crazy Frog/Sound Effects/frog.m4a"; sourceTree = "<group>"; };
-		D05F564422DCA081002BBEFB /* Level1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Level1.plist; path = "../../../../Downloads/materialy/Rozdziaą 3/3.12/Crazy Frog/Crazy Frog/Levels/Level1.plist"; sourceTree = "<group>"; };
-		D05F564522DCA081002BBEFB /* Level2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Level2.plist; path = "../../../../Downloads/materialy/Rozdziaą 3/3.12/Crazy Frog/Crazy Frog/Levels/Level2.plist"; sourceTree = "<group>"; };
-		D05F564622DCA081002BBEFB /* Level4.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Level4.plist; path = "../../../../Downloads/materialy/Rozdziaą 3/3.12/Crazy Frog/Crazy Frog/Levels/Level4.plist"; sourceTree = "<group>"; };
-		D05F564722DCA082002BBEFB /* Level6.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Level6.plist; path = "../../../../Downloads/materialy/Rozdziaą 3/3.12/Crazy Frog/Crazy Frog/Levels/Level6.plist"; sourceTree = "<group>"; };
-		D05F564822DCA082002BBEFB /* Level5.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Level5.plist; path = "../../../../Downloads/materialy/Rozdziaą 3/3.12/Crazy Frog/Crazy Frog/Levels/Level5.plist"; sourceTree = "<group>"; };
-		D05F564922DCA082002BBEFB /* Level3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Level3.plist; path = "../../../../Downloads/materialy/Rozdziaą 3/3.12/Crazy Frog/Crazy Frog/Levels/Level3.plist"; sourceTree = "<group>"; };
 		D065C7EB22D7276A00AE96CA /* CFBeeNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CFBeeNode.h; sourceTree = "<group>"; };
 		D065C7EC22D727A600AE96CA /* CFBeeNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CFBeeNode.m; sourceTree = "<group>"; };
 		D065C7F222D7318A00AE96CA /* SKAction+SKTExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "SKAction+SKTExtras.m"; path = "../../../SKTUtils/SKAction+SKTExtras.m"; sourceTree = "<group>"; };
@@ -349,8 +339,8 @@
 		52356C601907136C00D9C62F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D057534222E1DA9B00D4A586 /* Levels */,
 				D057531222E09A6B00D4A586 /* Background Music */,
-				D05F564322DCA05A002BBEFB /* Levels */,
 				D05F563822DC9083002BBEFB /* Sound Effects */,
 				52356C6A190713B500D9C62F /* Texture Atlas */,
 				52356C611907138600D9C62F /* Images */,
@@ -408,19 +398,6 @@
 				D05F563B22DC90AE002BBEFB /* win.m4a */,
 			);
 			name = "Sound Effects";
-			sourceTree = "<group>";
-		};
-		D05F564322DCA05A002BBEFB /* Levels */ = {
-			isa = PBXGroup;
-			children = (
-				D05F564422DCA081002BBEFB /* Level1.plist */,
-				D05F564522DCA081002BBEFB /* Level2.plist */,
-				D05F564922DCA082002BBEFB /* Level3.plist */,
-				D05F564622DCA081002BBEFB /* Level4.plist */,
-				D05F564822DCA082002BBEFB /* Level5.plist */,
-				D05F564722DCA082002BBEFB /* Level6.plist */,
-			);
-			name = Levels;
 			sourceTree = "<group>";
 		};
 		D065C7EE22D7309D00AE96CA /* Libs */ = {
@@ -546,25 +523,20 @@
 				D057531922E09A9400D4A586 /* BackgroundMusic-3.m4a in Resources */,
 				52356C691907139200D9C62F /* Default@2x.png in Resources */,
 				52356C681907139200D9C62F /* Default-Landscape~ipad.png in Resources */,
-				D05F564C22DCA082002BBEFB /* Level4.plist in Resources */,
 				52356C1C1907012F00D9C62F /* Images.xcassets in Resources */,
-				D05F564A22DCA082002BBEFB /* Level1.plist in Resources */,
 				52356C121907012F00D9C62F /* Main_iPad.storyboard in Resources */,
 				52356C0F1907012F00D9C62F /* Main_iPhone.storyboard in Resources */,
 				D05F563E22DC90AE002BBEFB /* eat.wav in Resources */,
 				52356C661907139200D9C62F /* Default-568h@2x.png in Resources */,
 				D057531722E09A9400D4A586 /* Intro.m4a in Resources */,
+				D057534322E1DA9C00D4A586 /* Levels in Resources */,
 				52356C061907012E00D9C62F /* InfoPlist.strings in Resources */,
 				52356C671907139200D9C62F /* Default-Landscape@2x~ipad.png in Resources */,
 				D05F563F22DC90AE002BBEFB /* win.m4a in Resources */,
-				D05F564B22DCA082002BBEFB /* Level2.plist in Resources */,
-				D05F564F22DCA082002BBEFB /* Level3.plist in Resources */,
-				D05F564D22DCA082002BBEFB /* Level6.plist in Resources */,
 				D05F563D22DC90AE002BBEFB /* lost.m4a in Resources */,
 				D05F564022DC90AE002BBEFB /* frog.m4a in Resources */,
 				D057531A22E09A9400D4A586 /* BackgroundMusic-1.m4a in Resources */,
 				52356C6C190713DB00D9C62F /* frog.atlas in Resources */,
-				D05F564E22DCA082002BBEFB /* Level5.plist in Resources */,
 				D057531822E09A9400D4A586 /* BackgroundMusic-2.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

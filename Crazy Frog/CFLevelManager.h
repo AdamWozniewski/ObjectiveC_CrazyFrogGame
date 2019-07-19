@@ -2,8 +2,8 @@
 
 @interface CFLevelManager : NSObject
 @property (nonatomic, strong, readonly) NSArray *levelsUnlocked;
+@property (nonatomic, strong) NSArray *levelsUnblocked;
 @property (nonatomic, assign) NSInteger currentScores;
-@property (nonatomic, strong, readonly) NSArray* levelsUnblocked;
 
 + (id) instance;
 - (void) saveLevelToUnblockedList: (NSInteger) levelNumber;

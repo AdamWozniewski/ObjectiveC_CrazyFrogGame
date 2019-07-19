@@ -31,12 +31,9 @@
 - (void)viewWillAppear: (BOOL)animated {
     for (int i = 1; i <= 6; ++i) {
         UIButton* button = (UIButton*)[self.view viewWithTag: i];
-        if (![self.levelManager.levelsUnblocked containsObject: [NSNumber numberWithInt: i]]) {
-            button.enabled = NO;
-        }
-        else {
-            button.enabled = YES;
-        }
+        if (![self.levelManager.levelsUnblocked containsObject:
+              [NSNumber numberWithInt: i]]) button.enabled = NO;
+        else button.enabled = YES;
     }
     [super viewWillAppear: animated];
 }

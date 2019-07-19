@@ -97,7 +97,7 @@ NSInteger const kFlyPoints = 1;
         }
     }
 }
--(NSDictionary *) levelData {
+- (NSDictionary *)levelData {
     return [self.levelManager levelInformation: self.levelNumber];
 }
 - (void) eventFinishedLevel {
@@ -171,7 +171,7 @@ NSInteger const kFlyPoints = 1;
     [self showSceneAndPlay];
 }
 - (void) nextLevelAction {
-    self.levelNumber++;
+    self.levelNumber += 1;
     if (self.levelNumber > [self.levelManager numberOfLevels]) {
         [self backButtonTapped];
         return;

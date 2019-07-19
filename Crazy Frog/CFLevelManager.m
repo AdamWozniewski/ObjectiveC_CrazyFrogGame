@@ -2,6 +2,7 @@
 
 NSString* const kLevelsUnblocked = @"kLevelsUnblocked";
 NSString* const kHighScore = @"kHighScore";
+
 @implementation CFLevelManager
 + (id) instance {
     static dispatch_once_t onceToken;
@@ -13,21 +14,20 @@ NSString* const kHighScore = @"kHighScore";
     });
     return shared;
 }
-
-- (NSArray*)levelsUnblocked {
+- (NSArray *)levelsUnblocked {
     return [NSArray arrayWithArray: [[NSUserDefaults standardUserDefaults] objectForKey: kLevelsUnblocked]];
 }
-- (void) saveLevelToUnblockedList:(NSInteger)levelNumber {
+- (void)saveLevelToUnblockedList: (NSInteger)levelNumber {
     NSMutableArray* levels = [NSMutableArray array];
     [levels addObject: [NSNumber numberWithInteger: levelNumber]];
-    
     if (![self.levelsUnblocked containsObject: [NSNumber numberWithInteger: levelNumber]]) {
         [levels addObjectsFromArray: self.levelsUnblocked];
         [[NSUserDefaults standardUserDefaults] setObject: levels forKey: kLevelsUnblocked];
     }
 }
 - (NSDictionary*)levelInformation: (NSInteger)levelNumber {
-    NSString* path = [[NSBundle mainBundle] pathForResource: [NSString stringWithFormat: @"Levels/Level%li", (long)levelNumber] ofType: @"plist"];
+    NSString* path = [[NSBundle mainBundle] pathForResource: [NSString stringWithFormat: @"Levels/Level%li",
+                                                              (long)levelNumber] ofType: @"plist"];
     NSDictionary* result = [[NSDictionary alloc] initWithContentsOfFile: path];
     return result;
 }

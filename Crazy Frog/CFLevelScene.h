@@ -3,11 +3,11 @@
 #import "PBParallaxScrolling.h"
 @import CoreMotion;
 @protocol SceneDelegate <NSObject>
--(void) eventKilled;
--(void) eventWasted;
--(void) eventFinishedLevel;
--(NSDictionary *) levelData;
--(BOOL) isMinimumScores;
+- (void) eventKilled;
+- (void) eventWasted;
+- (void) eventFinishedLevel;
+- (NSDictionary*) levelData;
+- (BOOL) isMinimumScores;
 @end
 @interface CFLevelScene : SKScene <SKPhysicsContactDelegate>
 @property (nonatomic, assign) NSInteger levelNumber;

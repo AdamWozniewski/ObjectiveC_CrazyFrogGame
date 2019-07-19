@@ -21,12 +21,8 @@ static const uint32_t kAwardCategory             =  0x1 << 8;
 @end
 
 @implementation CFLevelScene
-
-
-- (id)initWithSize: (CGSize)size andLevelNumber: (NSInteger)levelNumber
-{
-    if (self = [super initWithSize: size])
-    {
+- (id)initWithSize: (CGSize)size andLevelNumber: (NSInteger) levelNumber {
+    if (self = [super initWithSize: size]) {
         self.physicsWorld.contactDelegate = self;
         self.levelNumber = levelNumber;
         self.backgroundColor = [SKColor whiteColor];
@@ -38,10 +34,8 @@ static const uint32_t kAwardCategory             =  0x1 << 8;
         self.motionManager.accelerometerUpdateInterval = 0.2;
         [self.motionManager startAccelerometerUpdates];
     }
-    
     return self;
 }
-
 - (void) startGame {
     [self initializeGameWithLevel: self.levelNumber];
 }
@@ -50,39 +44,19 @@ static const uint32_t kAwardCategory             =  0x1 << 8;
     self.frog.physicsBody.velocity = CGVectorMake(self.xAcceleration * (IS_IPAD() ? 1200.0 : 600), self.frog.physicsBody.velocity.dy);
 }
 - (void) initializeGameWithLevel: (NSInteger) levelNumber {
-//    self.levelDistance = [[[self.delegate levelData] objectForKey: kLevelDistance] intValue];
-//    CGFloat speed = [[[self.delegate levelData] objectForKey: kSpeed] floatValue];
-//    self.speed = IS_IPAD() ? speed : speed * 0.75;
-//    self.numberOfFlies = [[[self.delegate levelData] objectForKey: kNumberOfBadBees] intValue];
-//    self.numberOfWaterObstacles = [[[self.delegate levelData] objectForKey: kNumberOfWaterObstacles] intValue];
-//    self.numberOfBadBees = [[[self.delegate levelData] objectForKey: kNumberOfBadBees] intValue];
-//    self.isFloor = [[[self.delegate levelData] objectForKey: kIsFloor] boolValue];
-//
-//    // Background implementation
-//    NSArray *imageNames = @[[NSString stringWithFormat:@"Background-%i", [[[self.delegate levelData] objectForKey: kLevelPrefix] intValue]]];
-//    PBParallaxScrolling *parallax = [[PBParallaxScrolling alloc] initWithBackgrounds: imageNames
-//                                                                                size: self.size
-//                                                                           direction: kPBParallaxBackgroundDirectionLeft
-//                                                                        fastestSpeed: self.speed * 0.5
-//                                                                    andSpeedDecrease: kPBParallaxBackgroundDefaultSpeedDifferential];
-    
-    
-    self.levelDistance = 5000;
-    CGFloat speed = 4;
+    self.levelDistance = [[[self.delegate levelData] objectForKey: kLevelDistance] intValue];
+    CGFloat speed = [[[self.delegate levelData] objectForKey: kSpeed] floatValue];
     self.speed = IS_IPAD() ? speed : speed * 0.75;
-    self.numberOfFlies = 10;
-    self.numberOfWaterObstacles = 3;
-    self.numberOfBadBees = 15;
-    self.isFloor = NO;
-    
-    // Background implementation
-    NSArray *imageNames = @[[NSString stringWithFormat:@"Background-%i", 1]];
+    self.numberOfFlies = [[[self.delegate levelData] objectForKey: kNumberOfBadBees] intValue];
+    self.numberOfWaterObstacles = [[[self.delegate levelData] objectForKey: kNumberOfWaterObstacles] intValue];
+    self.numberOfBadBees = [[[self.delegate levelData] objectForKey: kNumberOfBadBees] intValue];
+    self.isFloor = [[[self.delegate levelData] objectForKey: kIsFloor] boolValue];
+    NSArray *imageNames = @[[NSString stringWithFormat:@"Background-%i", [[[self.delegate levelData] objectForKey: kLevelPrefix] intValue]]];
     PBParallaxScrolling *parallax = [[PBParallaxScrolling alloc] initWithBackgrounds: imageNames
                                                                                 size: self.size
                                                                            direction: kPBParallaxBackgroundDirectionLeft
                                                                         fastestSpeed: self.speed * 0.5
                                                                     andSpeedDecrease: kPBParallaxBackgroundDefaultSpeedDifferential];
-    
     self.parallaxBackground = parallax;
     [self addChild: parallax];
     [self createFrog];
@@ -103,7 +77,6 @@ static const uint32_t kAwardCategory             =  0x1 << 8;
     self.frog.tongue.physicsBody.collisionBitMask = 0x0;
     self.frog.tongue.physicsBody.contactTestBitMask = kFlyCategory | kBeeCategory;
 }
-
 - (void) jumpAction {
     [self.frog jump];
 }
@@ -118,7 +91,6 @@ static const uint32_t kAwardCategory             =  0x1 << 8;
     }
     [self.frog eat];
 }
-
 - (void)update: (NSTimeInterval)currentTime {
     CGFloat minYposition = self.frog.size.height;
     CGFloat maxYPosition = self.size.height - self.frog.size.height;
@@ -141,8 +113,7 @@ static const uint32_t kAwardCategory             =  0x1 << 8;
     [self.parallaxBackground update: currentTime];
     [self updateAward: currentTime];
 }
-
--(void) createFlyWithLocation: (CGPoint) location {
+- (void) createFlyWithLocation: (CGPoint) location {
     SKSpriteNode *fly = [CFFlyNode new];
     fly.position = location;
     [fly setName:@"Fly"];
@@ -156,8 +127,7 @@ static const uint32_t kAwardCategory             =  0x1 << 8;
     [self.flyObstacles addObject:fly];
     [self addChild: fly];
 }
-
--(void) createBadBeesWithLocation: (CGPoint)location {
+- (void) createBadBeesWithLocation: (CGPoint)location {
     SKSpriteNode *bee = [CFBeeNode new];
     bee.position = location;
     [bee setName:@"Bee"];
@@ -171,11 +141,10 @@ static const uint32_t kAwardCategory             =  0x1 << 8;
     [self.badBeesObstacles addObject: bee];
     [self addChild: bee];
 }
--(void) createWaterObstacleWithLocation: (CGPoint)location {
-//    SKSpriteNode *obstacle = [SKSpriteNode spriteNodeWithImageNamed:
-//                              [NSString stringWithFormat:@"WaterObstacle-%i",
-//                               [[[self.delegate levelData] objectForKey: kLevelPrefix] intValue]]];
-    SKSpriteNode *obstacle = [SKSpriteNode spriteNodeWithImageNamed: [NSString stringWithFormat:@"WaterObstacle-%i", 1]];
+- (void) createWaterObstacleWithLocation: (CGPoint)location {
+    SKSpriteNode *obstacle = [SKSpriteNode spriteNodeWithImageNamed:
+                              [NSString stringWithFormat:@"WaterObstacle-%i",
+                               [[[self.delegate levelData] objectForKey: kLevelPrefix] intValue]]];
     obstacle.position = location;
     obstacle.zPosition = 997;
     obstacle.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize: obstacle.size];
@@ -190,7 +159,7 @@ static const uint32_t kAwardCategory             =  0x1 << 8;
     [self addChild: obstacle];
     
 }
--(void) updateObstacles: (NSTimeInterval)currentTime {
+- (void) updateObstacles: (NSTimeInterval)currentTime {
     for(int i = 0; i < self.flyObstacles.count; i++) {
         SKSpriteNode *obstacle = (SKSpriteNode *)self.flyObstacles[i];
         if (![obstacle.name isEqualToString: @"Killed"]) {
@@ -228,7 +197,7 @@ static const uint32_t kAwardCategory             =  0x1 << 8;
         }
     }
 }
--(void) didBeginContact:(SKPhysicsContact *)contact {
+- (void) didBeginContact:(SKPhysicsContact *)contact {
     uint32_t bitMaskA = contact.bodyA.categoryBitMask;
     uint32_t bitMaskB = contact.bodyB.categoryBitMask;
     
@@ -281,11 +250,9 @@ static const uint32_t kAwardCategory             =  0x1 << 8;
 }
 
 - (void) createFloor {
-//    SKSpriteNode *water = [SKSpriteNode spriteNodeWithImageNamed:
-//                           [NSString stringWithFormat:@"Water-%i",
-//                            [[[self.delegate levelData] objectForKey: kLevelPrefix] intValue]]];
     SKSpriteNode *water = [SKSpriteNode spriteNodeWithImageNamed:
-                           [NSString stringWithFormat:@"Water-%i", 1]];
+                           [NSString stringWithFormat:@"Water-%i",
+                            [[[self.delegate levelData] objectForKey: kLevelPrefix] intValue]]];
     water.position = CGPointMake(0.0, 20.0);
     [water setAnchorPoint: (CGPoint){0.0, 0.0}];
     [water setName:@"Water"];
@@ -300,12 +267,9 @@ static const uint32_t kAwardCategory             =  0x1 << 8;
     [self addChild: water];
     
     if (self.isFloor) {
-//        SKSpriteNode *floor = [SKSpriteNode spriteNodeWithImageNamed:
-//                               [NSString stringWithFormat: @"Floor-%i",
-//                                [[[self.delegate levelData] objectForKey: kLevelPrefix] intValue]]];
         SKSpriteNode *floor = [SKSpriteNode spriteNodeWithImageNamed:
-                               [NSString stringWithFormat: @"Floor-%i", 1]];
-        
+                               [NSString stringWithFormat: @"Floor-%i",
+                                [[[self.delegate levelData] objectForKey: kLevelPrefix] intValue]]];
         floor.position = CGPointZero;
         [floor setAnchorPoint: (CGPoint){0.0, 0.0}];
         [floor setName: @"Floor"];
@@ -329,11 +293,12 @@ static const uint32_t kAwardCategory             =  0x1 << 8;
     self.water = water;
 }
 - (void) createAward {
-//    SKSpriteNode *award = [SKSpriteNode spriteNodeWithImageNamed: [NSString stringWithFormat: @"Award-%i", [[[self.delegate levelData] objectForKey: kLevelPrefix] integerValue]]];
-    SKSpriteNode *award = [SKSpriteNode spriteNodeWithImageNamed: [NSString stringWithFormat: @"Award-%i", 1]];
+    SKSpriteNode *award = [SKSpriteNode spriteNodeWithImageNamed:
+                           [NSString stringWithFormat: @"Award-%i",
+                            [[[self.delegate levelData] objectForKey: kLevelPrefix] intValue]]];
     award.position = CGPointMake(self.size.width * 1.3, self.size.height * 0.5);
     [award setName: @"Award"];
-    [award setPhysicsBody: [SKPhysicsBody bodyWithRectangleOfSize: award.size]];
+    [award setPhysicsBody:[SKPhysicsBody bodyWithRectangleOfSize: award.size]];
     award.physicsBody.affectedByGravity = NO;
     award.physicsBody.dynamic = YES;
     award.physicsBody.categoryBitMask = kAwardCategory;

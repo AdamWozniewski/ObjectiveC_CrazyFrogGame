@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>numberOfFlies</key>
+	<integer>60</integer>
+	<key>numberOfWaterObstacles</key>
+	<integer>8</integer>
+	<key>numberOfBadBees</key>
+	<integer>20</integer>
+	<key>levelDistance</key>
+	<integer>14000</integer>
+	<key>speed</key>
+	<real>3</real>
+	<key>isFloor</key>
+	<false/>
+	<key>levelPrefix</key>
+	<string>2</string>
+	<key>prizeType</key>
+	<string>silverPrizePlus</string>
+</dict>
+</plist>
