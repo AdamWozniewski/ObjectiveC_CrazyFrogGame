@@ -91,7 +91,7 @@ static const uint32_t kAwardCategory             =  0x1 << 8;
 }
 - (void) createFrog {
     self.frog = [CFFrogNode new];
-    [self.frog setPosition: CGPointMake(500.0, CGRectGetMidY(self.frame))];
+    [self.frog setPosition: CGPointMake(200.0, CGRectGetMidY(self.frame))];
     [self.frog setName: @"Frog"];
     [self addChild: self.frog];
     
@@ -291,7 +291,7 @@ static const uint32_t kAwardCategory             =  0x1 << 8;
     [water setName:@"Water"];
     water.zPosition = 998;
     CGRect frame = water.frame;
-    frame.size.height -= 50.0;
+    frame.size.height -= IS_IPAD() ? 50.0 : 40.0;
     [water setPhysicsBody: [SKPhysicsBody bodyWithEdgeLoopFromRect: frame]];
     water.physicsBody.dynamic = NO;
     water.physicsBody.categoryBitMask = kWaterCategory;

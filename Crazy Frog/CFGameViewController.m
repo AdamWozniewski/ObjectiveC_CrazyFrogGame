@@ -69,9 +69,6 @@ NSInteger const kFlyPoints = 1;
 - (IBAction) backButtonTapped {
     [self.navigationController popViewControllerAnimated: YES];
 }
-- (void) startGame {
-    
-}
 - (IBAction)jumpAction {
     [self.levelScene jumpAction];
 }
@@ -88,6 +85,7 @@ NSInteger const kFlyPoints = 1;
 }
 -(void) eventFinishLevel {
     if (!self.isGameOver) {
+        self.isGameOver = YES;
         if (![self isMinimumScores]) {
             [self.audioManager playSoundEffect: @"lost.m4a"];
             [self pauseAction];
@@ -97,7 +95,6 @@ NSInteger const kFlyPoints = 1;
             [self pauseAction];
             [self showViewWithAward: YES];
         }
-        self.isGameOver = YES;
     }
 }
 -(NSDictionary *) levelData {
@@ -139,7 +136,7 @@ NSInteger const kFlyPoints = 1;
     [self.audioManager pauseBackgroundMusic];
 }
 -(void) uiForPause {
-    self.levelScene.paused = YES;
+    self.levelScene.view.paused = YES;
     self.pauseView.hidden = NO;
     self.pauseButton.hidden = YES;
     self.jumpButton.hidden = YES;
@@ -166,7 +163,9 @@ NSInteger const kFlyPoints = 1;
             [self nextLevelAction];
         }
         if (self.levelNumber > [self.levelManager numberOfLevels]) return;
-        [self repeatGameAction];
+        [self configureScene];
+        [self showSceneAndPlay];
+        [self.levelScene startGame];
         self.isGameOver = NO;
     }
     [self showSceneAndPlay];
@@ -191,11 +190,11 @@ NSInteger const kFlyPoints = 1;
     }
 }
 -(void) showSceneAndPlay {
-    self.levelScene.view.paused = NO;
     self.pauseView.hidden = YES;
     self.pauseButton.hidden = NO;
-    [self.audioManager resumeBackgroundMusic];
     self.jumpButton.hidden = NO;
+    [self.audioManager resumeBackgroundMusic];
+    self.levelScene.view.paused = NO;
 }
 - (void) reportAchievementsForGameState {
     NSMutableArray *achv = [NSMutableArray array];
