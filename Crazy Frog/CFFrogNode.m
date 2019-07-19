@@ -46,8 +46,8 @@
     
     [self createTongue];
     CGPoint tongueFinishPoint = IS_IPAD() ? CGPointMake(200.0, 200.0) : CGPointMake(120.0, 120.0);
-    CGPoint tongueStartPoint = IS_IPAD() ? CGPointMake(125.0, 125.0) : CGPointMake(75.0, 75.0);
-    
+    CGPoint tongueStartPoint = CGPointMake(self.size.width / 2, self.size.height / 2);
+    self.tongue.position = tongueStartPoint;
     SKAction *showTongue = [SKAction performSelector: @selector(changeTongueVisibility) onTarget: self];
     SKAction *moveUpTongue = [SKAction moveTo: tongueFinishPoint duration: 0.3];
     SKAction *moveDownTongue = [SKAction moveTo: tongueStartPoint duration: 0.3];

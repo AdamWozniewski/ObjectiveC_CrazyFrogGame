@@ -106,6 +106,10 @@
                                             <constraint firstAttribute="width" constant="140" id="gnC-50-yit"/>
                                         </constraints>
                                     </imageView>
+                                    <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dr1-fB-ekX">
+                                        <rect key="frame" x="128" y="0.0" width="768" height="66"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </adBannerView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>

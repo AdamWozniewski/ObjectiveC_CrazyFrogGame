@@ -3,6 +3,7 @@
 #import "SKTAudio.h"
 #import "CFLevelManager.h"
 #import "CFLevelScene.h"
+#import <iAd/iAd.h>
 
 extern NSString* const kNumberOfFlies;
 extern NSString* const kLevelDistance;
@@ -32,6 +33,7 @@ extern NSString* const kPrizeType;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabelPauseView;
 @property (weak, nonatomic) IBOutlet UIImageView *awardImagepauseView;
 @property (weak, nonatomic) IBOutlet UIImageView *levelClearedImageView;
+@property (nonatomic, weak) IBOutlet ADBannerView *bannerView;
 
 - (id) initWithSize: (CGSize)size andLevelNumber: (NSInteger)levelNumber;
 - (void) startGame;
@@ -47,4 +49,6 @@ extern NSString* const kPrizeType;
 - (void) uiForPause;
 - (void) nextLevelAction;
 - (void) checkVolumeButton;
+- (BOOL) bannerViewActionShouldBegin: (ADBannerView*)banner willLeaveApplication: (BOOL)willLeave;
+- (void)bannerView: (ADBannerView*)banner didFailToReceiveAdWithError: (NSError*) error;
 @end

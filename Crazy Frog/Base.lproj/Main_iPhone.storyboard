@@ -343,7 +343,7 @@
                                 <rect key="frame" x="0.0" y="39" width="1024" height="690"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="LevelCleared" translatesAutoresizingMaskIntoConstraints="NO" id="p6X-mb-l0m" userLabel="LevelCleared">
-                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="690"/>
+                                        <rect key="frame" x="0.0" y="-8" width="1024" height="690"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Award-1" translatesAutoresizingMaskIntoConstraints="NO" id="wAA-2W-QRW">
                                         <rect key="frame" x="48" y="102.5" width="115" height="115"/>
@@ -475,6 +475,10 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GIi-fx-Wat">
+                                <rect key="frame" x="272" y="0.0" width="480" height="32"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </adBannerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>

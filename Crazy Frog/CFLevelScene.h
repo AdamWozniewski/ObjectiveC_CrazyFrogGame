@@ -1,7 +1,7 @@
 #import <SpriteKit/SpriteKit.h>
 #import "CFFrogNode.h"
 #import "PBParallaxScrolling.h"
-
+@import CoreMotion;
 @protocol SceneDelegate <NSObject>
 -(void) eventKilled;
 -(void) eventWasted;
@@ -24,6 +24,8 @@
 @property (nonatomic, strong) PBParallaxScrolling* parallaxBackground;
 @property (nonatomic, weak) id <SceneDelegate> delegate;
 @property (nonatomic, strong) SKSpriteNode *award;
+@property (nonatomic, strong) CMMotionManager *motionManager;
+@property (nonatomic, assign) CGFloat xAcceleration;
 
 -(id) initWithSize: (CGSize)size andLevelNumber: (NSInteger)levelNumber;
 -(void) initializeGameWithLevel: (NSInteger) levelNumber;

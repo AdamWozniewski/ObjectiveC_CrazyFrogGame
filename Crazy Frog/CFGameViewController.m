@@ -3,6 +3,9 @@
 #import "SKTAudio.h"
 #import "CFLevelManager.h"
 #import "Macros.h"
+#import "GameKitHelper.h"
+#import "AchievementsHelper.h"
+#import <iAd/iAd.h>
 
 NSString* const kViewTransformChanged = @"viewTransformChanged";
 NSString* const kLevelDistance = @"levelDistance";
@@ -15,7 +18,7 @@ NSString* const kLevelPrefix = @"levelPrefix";
 NSString* const kPrizeType = @"prizeType";
 NSInteger const kFlyPoints = 1;
 
-@interface CFGameViewController () <SceneDelegate>
+@interface CFGameViewController () <SceneDelegate, ADBannerViewDelegate>
 @end
 
 @implementation CFGameViewController
@@ -27,6 +30,8 @@ NSInteger const kFlyPoints = 1;
 
     [self configureScene];
     self.levelScene.delegate = self;
+//    self.bannerView.delegate = self;
+//    [self.bannerView setBackgroundColor: [UIColor clearColor]];
 
     [self showSceneAndPlay];
     [self.levelScene startGame];
@@ -54,6 +59,9 @@ NSInteger const kFlyPoints = 1;
     
 //    self.awardImagepauseView.image = [UIImage imageNamed: [NSString stringWithFormat: @"Award-%i", [[self.levelData objectForKey: kLevelPrefix] intValue]]];
     self.awardImagepauseView.image = [UIImage imageNamed: [NSString stringWithFormat: @"Award-%i", 1]];
+//    [self.audioManager playBackgroundMusic: [NSString stringWithFormat: @"BackgroundMusic-%i.m4a", [[self.levelData objectForKey: kLevelPrefix] intValue]]];
+    [self.audioManager playBackgroundMusic: [NSString stringWithFormat: @"BackgroundMusic-%i.m4a", 1]];
+    self.isGameOver = NO;
 }
 
 #pragma mark Game Actions
@@ -103,6 +111,7 @@ NSInteger const kFlyPoints = 1;
         }
         else {
             [self.audioManager playSoundEffect: @"win.m4a"];
+            [self reportAchievementsForGameState];
         }
         self.isGameOver = YES;
     }
@@ -122,10 +131,12 @@ NSInteger const kFlyPoints = 1;
     self.highScoreLabelPauseView.text = [NSString stringWithFormat: @"Najwyższy wynik: %li", (long) [self.levelManager highScore]];
 //    self.scoreLabelPauseView.text = [NSString stringWithFormat: @"%li / %li x", (long)self.levelManager currentScores, [[[self levelData] objectForKey: kNumberOfFlies] longValue]];
     self.scoreLabelPauseView.text = [NSString stringWithFormat: @"%li / %li x", (long)self.levelManager.currentScores, (long)12];
+    [[GameKitHelper sharedGameKitHelper] reportScore: self.levelManager.currentScores forLeaderbordId: @"nasz.klucz.apple.id"];
 }
 -(IBAction) pauseAction {
     [self uiForPause];
     [self showViewWithAward: NO];
+    [self.audioManager pauseBackgroundMusic];
 }
 -(void) uiForPause {
     self.levelScene.paused = YES;
@@ -186,4 +197,18 @@ NSInteger const kFlyPoints = 1;
     [self.audioManager resumeBackgroundMusic];
     self.jumpButton.hidden = NO;
 }
+- (void) reportAchievementsForGameState {
+    NSMutableArray *achv = [NSMutableArray array];
+    [achv addObject: [AchievementsHelper prizeWithType: [self.levelData objectForKey: kPrizeType]]];
+    [[GameKitHelper sharedGameKitHelper] reportAchievements: achv];
+}
+//- (void)bannerView: (ADBannerView*)banner didFailToReceiveAdWithError: (NSError*) error {
+//    NSLog(@"iAd error: %@", error);
+//    [self.bannerView removeFromSuperview];
+//    self.bannerView = nil;
+//}
+//- (BOOL)bannerViewActionShouldBegin: (ADBannerView*)banner willLeaveApplication: (BOOL) willLeave {
+//    [self pauseAction];
+//    return YES;
+//}
 @end

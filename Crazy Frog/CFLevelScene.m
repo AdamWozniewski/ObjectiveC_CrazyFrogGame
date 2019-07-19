@@ -33,6 +33,10 @@ static const uint32_t kAwardCategory             =  0x1 << 8;
         self.flyObstacles = [NSMutableArray new];
         self.waterObstacles = [NSMutableArray new];
         self.badBeesObstacles = [NSMutableArray new];
+        
+        self.motionManager = [[CMMotionManager alloc] init];
+        self.motionManager.accelerometerUpdateInterval = 0.2;
+        [self.motionManager startAccelerometerUpdates];
     }
     
     return self;
@@ -41,7 +45,10 @@ static const uint32_t kAwardCategory             =  0x1 << 8;
 - (void) startGame {
     [self initializeGameWithLevel: self.levelNumber];
 }
-
+- (void) didSimulatePhysics {
+    self.xAcceleration = (self.motionManager.accelerometerData.acceleration.y * 0.75) + (self.xAcceleration * 0.25);
+    self.frog.physicsBody.velocity = CGVectorMake(self.xAcceleration * (IS_IPAD() ? 1200.0 : 600), self.frog.physicsBody.velocity.dy);
+}
 - (void) initializeGameWithLevel: (NSInteger) levelNumber {
 //    self.levelDistance = [[[self.delegate levelData] objectForKey: kLevelDistance] intValue];
 //    CGFloat speed = [[[self.delegate levelData] objectForKey: kSpeed] floatValue];

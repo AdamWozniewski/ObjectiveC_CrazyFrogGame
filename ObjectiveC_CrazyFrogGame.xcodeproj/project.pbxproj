@@ -38,6 +38,14 @@
 		52356C681907139200D9C62F /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 52356C641907139200D9C62F /* Default-Landscape~ipad.png */; };
 		52356C691907139200D9C62F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52356C651907139200D9C62F /* Default@2x.png */; };
 		52356C6C190713DB00D9C62F /* frog.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 52356C6B190713DB00D9C62F /* frog.atlas */; };
+		D057531722E09A9400D4A586 /* Intro.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D057531322E09A9300D4A586 /* Intro.m4a */; };
+		D057531822E09A9400D4A586 /* BackgroundMusic-2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D057531422E09A9400D4A586 /* BackgroundMusic-2.m4a */; };
+		D057531922E09A9400D4A586 /* BackgroundMusic-3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D057531522E09A9400D4A586 /* BackgroundMusic-3.m4a */; };
+		D057531A22E09A9400D4A586 /* BackgroundMusic-1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D057531622E09A9400D4A586 /* BackgroundMusic-1.m4a */; };
+		D057531C22E1913300D4A586 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D057531B22E1913300D4A586 /* Social.framework */; };
+		D057532222E1998D00D4A586 /* AchievementsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D057531F22E1998D00D4A586 /* AchievementsHelper.m */; };
+		D057532322E1998D00D4A586 /* GameKitHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D057532022E1998D00D4A586 /* GameKitHelper.m */; };
+		D057532522E1A1B800D4A586 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D057532422E1A1B800D4A586 /* iAd.framework */; };
 		D05F563D22DC90AE002BBEFB /* lost.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D05F563922DC90AE002BBEFB /* lost.m4a */; };
 		D05F563E22DC90AE002BBEFB /* eat.wav in Resources */ = {isa = PBXBuildFile; fileRef = D05F563A22DC90AE002BBEFB /* eat.wav */; };
 		D05F563F22DC90AE002BBEFB /* win.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D05F563B22DC90AE002BBEFB /* win.m4a */; };
@@ -118,6 +126,16 @@
 		52356C651907139200D9C62F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		52356C6B190713DB00D9C62F /* frog.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = frog.atlas; sourceTree = "<group>"; };
 		52356C6D1907140F00D9C62F /* Macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
+		D057531322E09A9300D4A586 /* Intro.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Intro.m4a; path = "../../../../Downloads/materialy/Rozdziaą 3/3.19/Crazy Frog/Crazy Frog/Background Music/Intro.m4a"; sourceTree = "<group>"; };
+		D057531422E09A9400D4A586 /* BackgroundMusic-2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = "BackgroundMusic-2.m4a"; path = "../../../../Downloads/materialy/Rozdziaą 3/3.19/Crazy Frog/Crazy Frog/Background Music/BackgroundMusic-2.m4a"; sourceTree = "<group>"; };
+		D057531522E09A9400D4A586 /* BackgroundMusic-3.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = "BackgroundMusic-3.m4a"; path = "../../../../Downloads/materialy/Rozdziaą 3/3.19/Crazy Frog/Crazy Frog/Background Music/BackgroundMusic-3.m4a"; sourceTree = "<group>"; };
+		D057531622E09A9400D4A586 /* BackgroundMusic-1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = "BackgroundMusic-1.m4a"; path = "../../../../Downloads/materialy/Rozdziaą 3/3.19/Crazy Frog/Crazy Frog/Background Music/BackgroundMusic-1.m4a"; sourceTree = "<group>"; };
+		D057531B22E1913300D4A586 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		D057531E22E1998D00D4A586 /* GameKitHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameKitHelper.h; path = "../../../../Downloads/materialy/Rozdziaą 3/3.21/Crazy Frog/Crazy Frog/GameKitHelper/GameKitHelper.h"; sourceTree = "<group>"; };
+		D057531F22E1998D00D4A586 /* AchievementsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AchievementsHelper.m; path = "../../../../Downloads/materialy/Rozdziaą 3/3.21/Crazy Frog/Crazy Frog/GameKitHelper/AchievementsHelper.m"; sourceTree = "<group>"; };
+		D057532022E1998D00D4A586 /* GameKitHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameKitHelper.m; path = "../../../../Downloads/materialy/Rozdziaą 3/3.21/Crazy Frog/Crazy Frog/GameKitHelper/GameKitHelper.m"; sourceTree = "<group>"; };
+		D057532122E1998D00D4A586 /* AchievementsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AchievementsHelper.h; path = "../../../../Downloads/materialy/Rozdziaą 3/3.21/Crazy Frog/Crazy Frog/GameKitHelper/AchievementsHelper.h"; sourceTree = "<group>"; };
+		D057532422E1A1B800D4A586 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		D05F563922DC90AE002BBEFB /* lost.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = lost.m4a; path = "../../../../Downloads/materialy/Rozdziaą 3/3.8/Crazy Frog/Crazy Frog/Sound Effects/lost.m4a"; sourceTree = "<group>"; };
 		D05F563A22DC90AE002BBEFB /* eat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = eat.wav; path = "../../../../Downloads/materialy/Rozdziaą 3/3.8/Crazy Frog/Crazy Frog/Sound Effects/eat.wav"; sourceTree = "<group>"; };
 		D05F563B22DC90AE002BBEFB /* win.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = win.m4a; path = "../../../../Downloads/materialy/Rozdziaą 3/3.8/Crazy Frog/Crazy Frog/Sound Effects/win.m4a"; sourceTree = "<group>"; };
@@ -156,10 +174,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D057531C22E1913300D4A586 /* Social.framework in Frameworks */,
 				52356BFC1907012E00D9C62F /* CoreGraphics.framework in Frameworks */,
 				52356BFE1907012E00D9C62F /* UIKit.framework in Frameworks */,
 				52356C001907012E00D9C62F /* SpriteKit.framework in Frameworks */,
 				52356BFA1907012E00D9C62F /* Foundation.framework in Frameworks */,
+				D057532522E1A1B800D4A586 /* iAd.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +218,8 @@
 		52356BF81907012E00D9C62F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D057532422E1A1B800D4A586 /* iAd.framework */,
+				D057531B22E1913300D4A586 /* Social.framework */,
 				52356BF91907012E00D9C62F /* Foundation.framework */,
 				52356BFB1907012E00D9C62F /* CoreGraphics.framework */,
 				52356BFD1907012E00D9C62F /* UIKit.framework */,
@@ -327,6 +349,7 @@
 		52356C601907136C00D9C62F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D057531222E09A6B00D4A586 /* Background Music */,
 				D05F564322DCA05A002BBEFB /* Levels */,
 				D05F563822DC9083002BBEFB /* Sound Effects */,
 				52356C6A190713B500D9C62F /* Texture Atlas */,
@@ -352,6 +375,28 @@
 				52356C6B190713DB00D9C62F /* frog.atlas */,
 			);
 			name = "Texture Atlas";
+			sourceTree = "<group>";
+		};
+		D057531222E09A6B00D4A586 /* Background Music */ = {
+			isa = PBXGroup;
+			children = (
+				D057531622E09A9400D4A586 /* BackgroundMusic-1.m4a */,
+				D057531422E09A9400D4A586 /* BackgroundMusic-2.m4a */,
+				D057531522E09A9400D4A586 /* BackgroundMusic-3.m4a */,
+				D057531322E09A9300D4A586 /* Intro.m4a */,
+			);
+			name = "Background Music";
+			sourceTree = "<group>";
+		};
+		D057531D22E1996400D4A586 /* GameKitHelper */ = {
+			isa = PBXGroup;
+			children = (
+				D057532122E1998D00D4A586 /* AchievementsHelper.h */,
+				D057531F22E1998D00D4A586 /* AchievementsHelper.m */,
+				D057531E22E1998D00D4A586 /* GameKitHelper.h */,
+				D057532022E1998D00D4A586 /* GameKitHelper.m */,
+			);
+			name = GameKitHelper;
 			sourceTree = "<group>";
 		};
 		D05F563822DC9083002BBEFB /* Sound Effects */ = {
@@ -381,6 +426,7 @@
 		D065C7EE22D7309D00AE96CA /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				D057531D22E1996400D4A586 /* GameKitHelper */,
 				D065C80B22D7539F00AE96CA /* PBParallaxScrolling */,
 				D065C7F122D7314100AE96CA /* SKUtils */,
 			);
@@ -497,6 +543,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D057531922E09A9400D4A586 /* BackgroundMusic-3.m4a in Resources */,
 				52356C691907139200D9C62F /* Default@2x.png in Resources */,
 				52356C681907139200D9C62F /* Default-Landscape~ipad.png in Resources */,
 				D05F564C22DCA082002BBEFB /* Level4.plist in Resources */,
@@ -506,6 +553,7 @@
 				52356C0F1907012F00D9C62F /* Main_iPhone.storyboard in Resources */,
 				D05F563E22DC90AE002BBEFB /* eat.wav in Resources */,
 				52356C661907139200D9C62F /* Default-568h@2x.png in Resources */,
+				D057531722E09A9400D4A586 /* Intro.m4a in Resources */,
 				52356C061907012E00D9C62F /* InfoPlist.strings in Resources */,
 				52356C671907139200D9C62F /* Default-Landscape@2x~ipad.png in Resources */,
 				D05F563F22DC90AE002BBEFB /* win.m4a in Resources */,
@@ -514,8 +562,10 @@
 				D05F564D22DCA082002BBEFB /* Level6.plist in Resources */,
 				D05F563D22DC90AE002BBEFB /* lost.m4a in Resources */,
 				D05F564022DC90AE002BBEFB /* frog.m4a in Resources */,
+				D057531A22E09A9400D4A586 /* BackgroundMusic-1.m4a in Resources */,
 				52356C6C190713DB00D9C62F /* frog.atlas in Resources */,
 				D05F564E22DCA082002BBEFB /* Level5.plist in Resources */,
+				D057531822E09A9400D4A586 /* BackgroundMusic-2.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,12 +595,14 @@
 				52356C5E1907133000D9C62F /* CFWaterNode.m in Sources */,
 				D065C80422D7318B00AE96CA /* SKNode+SKTDebugDraw.m in Sources */,
 				D065C80922D7318B00AE96CA /* SKTTimingFunctions.m in Sources */,
+				D057532222E1998D00D4A586 /* AchievementsHelper.m in Sources */,
 				D065C80822D7318B00AE96CA /* SKTAudio.m in Sources */,
 				52356C5B1907131300D9C62F /* CFFloorNode.m in Sources */,
 				D065C7ED22D727A600AE96CA /* CFBeeNode.m in Sources */,
 				52356C0C1907012F00D9C62F /* AppDelegate.m in Sources */,
 				52356C4F1907124700D9C62F /* CFFrogNode.m in Sources */,
 				52356C58190712FF00D9C62F /* CFAwardNode.m in Sources */,
+				D057532322E1998D00D4A586 /* GameKitHelper.m in Sources */,
 				52356C081907012E00D9C62F /* main.m in Sources */,
 				D065C80E22D753E700AE96CA /* PBParallaxScrolling.m in Sources */,
 				D065C80322D7318B00AE96CA /* SKAction+SKTExtras.m in Sources */,
