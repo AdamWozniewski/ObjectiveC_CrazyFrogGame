@@ -476,7 +476,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GIi-fx-Wat">
-                                <rect key="frame" x="272" y="0.0" width="480" height="32"/>
+                                <rect key="frame" x="272" y="0.0" width="610" height="32"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </adBannerView>
                         </subviews>

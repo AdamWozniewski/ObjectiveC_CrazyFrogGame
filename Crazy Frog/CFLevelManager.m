@@ -8,10 +8,10 @@ NSString* const kHighScore = @"kHighScore";
     static dispatch_once_t onceToken;
     static CFLevelManager *shared;
     dispatch_once(&onceToken, ^{
-        shared = [[CFLevelManager alloc] init];
-        [shared saveLevelToUnblockedList: 1];
-        
-    });
+                      shared = [[CFLevelManager alloc] init];
+                      [shared saveLevelToUnblockedList: 1];
+                  });
+    
     return shared;
 }
 - (NSArray *)levelsUnblocked {
@@ -25,21 +25,20 @@ NSString* const kHighScore = @"kHighScore";
         [[NSUserDefaults standardUserDefaults] setObject: levels forKey: kLevelsUnblocked];
     }
 }
-- (NSDictionary*)levelInformation: (NSInteger)levelNumber {
-    NSString* path = [[NSBundle mainBundle] pathForResource: [NSString stringWithFormat: @"Levels/Level%li",
+- (NSDictionary *) levelInformation: (NSInteger) levelNumber {
+    NSString *path = [[NSBundle mainBundle] pathForResource: [NSString stringWithFormat: @"Levels/Level%li",
                                                               (long)levelNumber] ofType: @"plist"];
-    NSDictionary* result = [[NSDictionary alloc] initWithContentsOfFile: path];
+    NSDictionary *result = [[NSDictionary alloc] initWithContentsOfFile: path];
     return result;
 }
 - (NSInteger) highScore {
     return [[[NSUserDefaults standardUserDefaults] objectForKey: kHighScore] integerValue];
 }
 - (void) saveHighScore:(NSInteger)score {
-    if (score > [self highScore]) {
-        [[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInteger: score] forKey: kHighScore];
-    }
+    if (score > [self highScore]) [[NSUserDefaults standardUserDefaults] setObject: [NSNumber numberWithInteger: score]
+                                                  forKey: kHighScore];
 }
-- (NSInteger)numberOfLevels {
+- (NSInteger) numberOfLevels {
     NSString* bundlePath = [NSString stringWithFormat: @"%@/Levels", [[NSBundle mainBundle] bundlePath]];
     NSArray* directoryContent  = [[NSFileManager defaultManager] contentsOfDirectoryAtPath: bundlePath
                                                                                      error: nil];

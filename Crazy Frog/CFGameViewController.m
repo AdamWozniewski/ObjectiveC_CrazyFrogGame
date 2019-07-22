@@ -24,38 +24,45 @@ NSInteger const kFlyPoints = 1;
 @implementation CFGameViewController
 - (void)viewDidLoad {
     self.audioManager = [SKTAudio sharedInstance];
-    self.audioManager.isMusicOn = YES;
-
     self.levelManager = [CFLevelManager instance];
-
     [self configureScene];
-    self.levelScene.delegate = self;
-//    self.bannerView.delegate = self;
-//    [self.bannerView setBackgroundColor: [UIColor clearColor]];
-
+    
     [self showSceneAndPlay];
     [self.levelScene startGame];
     
     self.scoreLabel.textColor = [SKColor blackColor];
-    self.scoreLabel.font = [UIFont fontWithName: @"Chalkboard-Bold" size: (IS_IPAD() ? 34.0 : 16.0)];
-    self.pauseView.hidden = YES; // scena domyslnie jest ukryta
+    self.scoreLabel.font = [UIFont fontWithName: @"ChalkboardSE-Bold"
+                                           size: (IS_IPAD() ? 34.0 : 16.0)];
+    self.scoreLabelPauseView.textColor = [SKColor whiteColor];
+    self.scoreLabelPauseView.font = [UIFont fontWithName: @"ChalkboardSE-Bold"
+                                                    size: (IS_IPAD() ? 44.0 : 26.0)];
+    self.highScoreLabelPauseView.textColor = [SKColor whiteColor];
+    self.highScoreLabelPauseView.font = [UIFont fontWithName: @"ChalkboardSE-Bold"
+                                                        size: (IS_IPAD() ? 32.0 : 18.0)];
+    
+//    self.bannerView.delegate = self;
+//    [self.bannerView setBackgroundColor: [UIColor clearColor]];
+    
 }
 - (void) dealloc {
 }
 - (void) configureScene {
     SKView* skView = (SKView *)self.view;
-    skView.showsFPS = YES;
-    skView.showsNodeCount = YES;
-    
+//    skView.showsFPS = YES;
+//    skView.showsNodeCount = YES;
     self.levelManager.currentScores = 0;
+    [self updateScores];
     
     self.levelScene = [[CFLevelScene alloc] initWithSize: skView.bounds.size andLevelNumber: self.levelNumber];
     self.levelScene.scaleMode = SKSceneScaleModeFill;
     [skView presentScene: self.levelScene];
-    [self updateScores];
     
-    self.awardImagepauseView.image = [UIImage imageNamed: [NSString stringWithFormat: @"Award-%i", [[self.levelData objectForKey: kLevelPrefix] intValue]]];
+//    self.awardImagePauseView.image = [UIImage imageNamed: [NSString stringWithFormat: @"Award-%i", [[self.levelData objectForKey: kLevelPrefix] intValue]]];
+    self.levelScene.delegate = self;
+    self.levelScene.scaleMode = SKSceneScaleModeFill;
+    [skView presentScene: self.levelScene];
     [self.audioManager playBackgroundMusic: [NSString stringWithFormat: @"BackgroundMusic-%i.m4a", [[self.levelData objectForKey: kLevelPrefix] intValue]]];
+    
     self.isGameOver = NO;
 }
 
@@ -78,40 +85,27 @@ NSInteger const kFlyPoints = 1;
     self.levelManager.currentScores += kFlyPoints;
     [self updateScores];
 }
--(void) eventFinishLevel {
+- (NSDictionary *)levelData {
+    return [self.levelManager levelInformation: self.levelNumber];
+}
+- (void) eventFinishedLevel {
     if (!self.isGameOver) {
         self.isGameOver = YES;
         if (![self isMinimumScores]) {
             [self.audioManager playSoundEffect: @"lost.m4a"];
             [self pauseAction];
             [self showViewWithAward: NO];
-        } else {
+        }
+        else {
             [self.audioManager playSoundEffect: @"win.m4a"];
+//            [self reportAchievementsForGameState];
             [self pauseAction];
             [self showViewWithAward: YES];
         }
     }
 }
-- (NSDictionary *)levelData {
-    return [self.levelManager levelInformation: self.levelNumber];
-}
-- (void) eventFinishedLevel {
-    if (!self.isGameOver) {
-        if (![self isMinimumScores]) {
-            [self.audioManager playSoundEffect: @"lost.m4a"];
-            [self eventWasted];
-        }
-        else {
-            [self.audioManager playSoundEffect: @"win.m4a"];
-            [self reportAchievementsForGameState];
-        }
-        self.isGameOver = YES;
-    }
-}
 -(BOOL) isMinimumScores {
-    if(([[self.levelData objectForKey: kNumberOfFlies] integerValue] * 0.5) <= self.levelManager.currentScores) {
-        return YES;
-    }
+    if (([[self.levelData objectForKey: kNumberOfFlies] integerValue] * 0.5) <= self.levelManager.currentScores) return YES;
     return NO;
 }
 - (void) updateScores {
@@ -120,7 +114,7 @@ NSInteger const kFlyPoints = 1;
     
     self.highScoreLabelPauseView.text = [NSString stringWithFormat: @"Najwyższy wynik: %li", (long) [self.levelManager highScore]];
     self.scoreLabelPauseView.text = [NSString stringWithFormat: @"%li / %li x", (long)self.levelManager.currentScores, [[[self levelData] objectForKey: kNumberOfFlies] longValue]];
-    [[GameKitHelper sharedGameKitHelper] reportScore: self.levelManager.currentScores forLeaderbordId: @"nasz.klucz.apple.id"];
+//    [[GameKitHelper sharedGameKitHelper] reportScore: self.levelManager.currentScores forLeaderbordId: @"nasz.klucz.apple.id"];
 }
 -(IBAction) pauseAction {
     [self uiForPause];

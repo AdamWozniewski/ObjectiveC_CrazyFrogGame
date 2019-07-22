@@ -47,7 +47,7 @@ static const uint32_t kAwardCategory             =  0x1 << 8;
     self.levelDistance = [[[self.delegate levelData] objectForKey: kLevelDistance] intValue];
     CGFloat speed = [[[self.delegate levelData] objectForKey: kSpeed] floatValue];
     self.speed = IS_IPAD() ? speed : speed * 0.75;
-    self.numberOfFlies = [[[self.delegate levelData] objectForKey: kNumberOfBadBees] intValue];
+    self.numberOfFlies = [[[self.delegate levelData] objectForKey: kNumberOfFlies] intValue];
     self.numberOfWaterObstacles = [[[self.delegate levelData] objectForKey: kNumberOfWaterObstacles] intValue];
     self.numberOfBadBees = [[[self.delegate levelData] objectForKey: kNumberOfBadBees] intValue];
     self.isFloor = [[[self.delegate levelData] objectForKey: kIsFloor] boolValue];
@@ -57,6 +57,7 @@ static const uint32_t kAwardCategory             =  0x1 << 8;
                                                                            direction: kPBParallaxBackgroundDirectionLeft
                                                                         fastestSpeed: self.speed * 0.5
                                                                     andSpeedDecrease: kPBParallaxBackgroundDefaultSpeedDifferential];
+    NSLog(@"%i", self.numberOfFlies);
     self.parallaxBackground = parallax;
     [self addChild: parallax];
     [self createFrog];
