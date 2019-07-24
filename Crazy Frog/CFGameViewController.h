@@ -49,6 +49,6 @@ extern NSString* const kPrizeType;
 - (void) uiForPause;
 - (void) nextLevelAction;
 - (void) checkVolumeButton;
-- (BOOL) bannerViewActionShouldBegin: (ADBannerView*)banner willLeaveApplication: (BOOL)willLeave;
-- (void)bannerView: (ADBannerView*)banner didFailToReceiveAdWithError: (NSError*) error;
+- (BOOL) bannerViewActionShouldBegin: (ADBannerView *)banner willLeaveApplication: (BOOL) willLeave;
+- (void)bannerView: (ADBannerView *)banner didFailToReceiveAdWithError: (NSError *) error;
 @end

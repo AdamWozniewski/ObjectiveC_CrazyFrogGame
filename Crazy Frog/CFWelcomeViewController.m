@@ -2,6 +2,9 @@
 #import "SKTAudio.h"
 #import <Social/Social.h>
 #import "GameKitHelper.h"
+#import "CFGameViewController.h"
+#import "CFAboutMeViewController.h"
+
 static NSString *iTunesURL = @"https://itunes.apple.com/app/id863461572";
 @interface CFWelcomeViewController ()
 @end
@@ -56,7 +59,8 @@ static NSString *iTunesURL = @"https://itunes.apple.com/app/id863461572";
     else self.gameCenterButton.enabled = NO;
 }
 - (IBAction)volumeButtonTapped {
-    self.audioManager.isMusicOn = !self.audioManager.isMusicOn;
+//    self.audioManager.isMusicOn = !self.audioManager.isMusicOn;
+    self.audioManager.isMusicOn = NO;
     [self checkVoluleButton];
 }
 - (void) checkVoluleButton {
@@ -68,5 +72,17 @@ static NSString *iTunesURL = @"https://itunes.apple.com/app/id863461572";
     [self presentViewController: gameKitHelper.authenticationViewControler
                          animated: YES
                        completion: nil];
+}
+- (IBAction) aboutMeButtonTapped {
+//    CFAboutMeViewController *viewController = [[CFAboutMeViewController alloc] init];
+//    [self presentViewController:viewController animated:YES completion:nil];
+    //Storyboard
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
+    CFAboutMeViewController *viewController = (CFAboutMeViewController *)[storyboard instantiateViewControllerWithIdentifier:@"aboutMeViewController"];
+    [self presentViewController:viewController animated:YES completion:nil];
+    
+}
+- (IBAction) closeApp {
+    exit(0);
 }
 @end

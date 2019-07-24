@@ -38,6 +38,7 @@
 		52356C681907139200D9C62F /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 52356C641907139200D9C62F /* Default-Landscape~ipad.png */; };
 		52356C691907139200D9C62F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52356C651907139200D9C62F /* Default@2x.png */; };
 		52356C6C190713DB00D9C62F /* frog.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 52356C6B190713DB00D9C62F /* frog.atlas */; };
+		D03BEBC222E6F78D0042995D /* CFAboutMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D03BEBC122E6F78D0042995D /* CFAboutMeViewController.m */; };
 		D057531722E09A9400D4A586 /* Intro.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D057531322E09A9300D4A586 /* Intro.m4a */; };
 		D057531822E09A9400D4A586 /* BackgroundMusic-2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D057531422E09A9400D4A586 /* BackgroundMusic-2.m4a */; };
 		D057531922E09A9400D4A586 /* BackgroundMusic-3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D057531522E09A9400D4A586 /* BackgroundMusic-3.m4a */; };
@@ -121,6 +122,8 @@
 		52356C651907139200D9C62F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		52356C6B190713DB00D9C62F /* frog.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = frog.atlas; sourceTree = "<group>"; };
 		52356C6D1907140F00D9C62F /* Macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
+		D03BEBC022E6F6EB0042995D /* CFAboutMeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CFAboutMeViewController.h; sourceTree = "<group>"; };
+		D03BEBC122E6F78D0042995D /* CFAboutMeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CFAboutMeViewController.m; sourceTree = "<group>"; };
 		D057531322E09A9300D4A586 /* Intro.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Intro.m4a; path = "../../../../Downloads/materialy/Rozdziaą 3/3.19/Crazy Frog/Crazy Frog/Background Music/Intro.m4a"; sourceTree = "<group>"; };
 		D057531422E09A9400D4A586 /* BackgroundMusic-2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = "BackgroundMusic-2.m4a"; path = "../../../../Downloads/materialy/Rozdziaą 3/3.19/Crazy Frog/Crazy Frog/Background Music/BackgroundMusic-2.m4a"; sourceTree = "<group>"; };
 		D057531522E09A9400D4A586 /* BackgroundMusic-3.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = "BackgroundMusic-3.m4a"; path = "../../../../Downloads/materialy/Rozdziaą 3/3.19/Crazy Frog/Crazy Frog/Background Music/BackgroundMusic-3.m4a"; sourceTree = "<group>"; };
@@ -276,6 +279,8 @@
 				52356C42190711A700D9C62F /* CFSelectLevelViewController.m */,
 				52356C44190711BF00D9C62F /* CFGameViewController.h */,
 				52356C45190711BF00D9C62F /* CFGameViewController.m */,
+				D03BEBC022E6F6EB0042995D /* CFAboutMeViewController.h */,
+				D03BEBC122E6F78D0042995D /* CFAboutMeViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -563,6 +568,7 @@
 				52356C401907118C00D9C62F /* CFWelcomeViewController.m in Sources */,
 				D065C80722D7318B00AE96CA /* SKEmitterNode+SKTExtras.m in Sources */,
 				52356C3D1907116A00D9C62F /* CFLevelManager.m in Sources */,
+				D03BEBC222E6F78D0042995D /* CFAboutMeViewController.m in Sources */,
 				D065C80A22D7318B00AE96CA /* SKNode+SKTExtras.m in Sources */,
 				52356C5E1907133000D9C62F /* CFWaterNode.m in Sources */,
 				D065C80422D7318B00AE96CA /* SKNode+SKTDebugDraw.m in Sources */,

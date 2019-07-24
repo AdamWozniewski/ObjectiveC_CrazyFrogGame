@@ -57,7 +57,7 @@ NSInteger const kFlyPoints = 1;
     self.levelScene.scaleMode = SKSceneScaleModeFill;
     [skView presentScene: self.levelScene];
     
-//    self.awardImagePauseView.image = [UIImage imageNamed: [NSString stringWithFormat: @"Award-%i", [[self.levelData objectForKey: kLevelPrefix] intValue]]];
+    self.awardImagepauseView.image = [UIImage imageNamed: [NSString stringWithFormat: @"Award-%i", [[self.levelData objectForKey: kLevelPrefix] intValue]]];
     self.levelScene.delegate = self;
     self.levelScene.scaleMode = SKSceneScaleModeFill;
     [skView presentScene: self.levelScene];
@@ -75,12 +75,12 @@ NSInteger const kFlyPoints = 1;
     [self.levelScene jumpAction];
 }
 
--(void) eventWasted {
+- (void) eventWasted {
     [self.audioManager playSoundEffect: @"frog.m4a"];
     self.isGameOver = YES;
     [self pauseAction];
 }
--(void) eventKilled {
+- (void) eventKilled {
     [self.audioManager playSoundEffect: @"eat.wav"];
     self.levelManager.currentScores += kFlyPoints;
     [self updateScores];
@@ -104,7 +104,7 @@ NSInteger const kFlyPoints = 1;
         }
     }
 }
--(BOOL) isMinimumScores {
+- (BOOL) isMinimumScores {
     if (([[self.levelData objectForKey: kNumberOfFlies] integerValue] * 0.5) <= self.levelManager.currentScores) return YES;
     return NO;
 }
@@ -116,12 +116,12 @@ NSInteger const kFlyPoints = 1;
     self.scoreLabelPauseView.text = [NSString stringWithFormat: @"%li / %li x", (long)self.levelManager.currentScores, [[[self levelData] objectForKey: kNumberOfFlies] longValue]];
 //    [[GameKitHelper sharedGameKitHelper] reportScore: self.levelManager.currentScores forLeaderbordId: @"nasz.klucz.apple.id"];
 }
--(IBAction) pauseAction {
+- (IBAction) pauseAction {
     [self uiForPause];
     [self showViewWithAward: NO];
     [self.audioManager pauseBackgroundMusic];
 }
--(void) uiForPause {
+- (void) uiForPause {
     self.levelScene.view.paused = YES;
     self.pauseView.hidden = NO;
     self.pauseButton.hidden = YES;

@@ -6,10 +6,12 @@
 @property (weak, nonatomic) IBOutlet UIButton* twitterButton;
 @property (weak, nonatomic) IBOutlet UIButton* facebookButton;
 @property (weak, nonatomic) IBOutlet UIButton* gameCenterButton;
-@property (weak, nonatomic) IBOutlet UIButton* volumeButton;
-- (IBAction)twitterButtonTapped;
-- (IBAction)facebookButtonTapped;
-- (IBAction)gameCenterButtonTapped;
-- (IBAction)volumeButtonTapped;
+@property (weak, nonatomic) IBOutlet UIButton *volumeButton;
+- (IBAction) twitterButtonTapped;
+- (IBAction) facebookButtonTapped;
+- (IBAction) gameCenterButtonTapped;
+- (IBAction) volumeButtonTapped;
 - (void) checkVoluleButton;
+- (IBAction) aboutMeButtonTapped;
+- (IBAction) closeApp;
 @end

@@ -21,7 +21,7 @@
     self.seaStarButton.tag = 6;
     [super viewDidLoad];
 }
-- (void)viewWillAppear: (BOOL)animated {
+- (void) viewWillAppear: (BOOL)animated {
     for (int i = 1; i <= 6; ++i) {
         UIButton* button = (UIButton *)[self.view viewWithTag: i];
         if ([self.levelManager.levelsUnblocked containsObject:

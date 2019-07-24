@@ -2,7 +2,7 @@
 #import "Macros.h"
 
 @implementation CFBeeNode
--(instancetype) init {
+- (instancetype) init {
     if (self = [super init]) {
         self = [CFBeeNode spriteNodeWithImageNamed: @"BadBee"];
         self.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius: IS_IPAD() ? self.size.height : self.size.height / 2.0];

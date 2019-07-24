@@ -1,5 +1,5 @@
 #import <SpriteKit/SpriteKit.h>
 
 @interface CFWaterObstacle : SKSpriteNode
--(instancetype) initWithObstacleNumber: (NSUInteger)number;
+- (instancetype) initWithObstacleNumber: (NSUInteger)number;
 @end

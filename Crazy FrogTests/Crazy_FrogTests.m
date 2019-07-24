@@ -1,11 +1,3 @@
-//
-//  Crazy_FrogTests.m
-//  Crazy FrogTests
-//
-//  Created by Maciej Cupial on 22/04/14.
-//  Copyright (c) 2014 Maciej Cupial. All rights reserved.
-//
-
 #import <XCTest/XCTest.h>
 
 @interface Crazy_FrogTests : XCTestCase

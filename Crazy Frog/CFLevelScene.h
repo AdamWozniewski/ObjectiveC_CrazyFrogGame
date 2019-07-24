@@ -16,21 +16,21 @@
 @property (nonatomic, assign) NSInteger numberOfFlies;
 @property (nonatomic, assign) NSInteger numberOfWaterObstacles;
 @property (nonatomic, assign) NSInteger numberOfBadBees;
-@property (nonatomic, strong) CFFrogNode* frog;
-@property (nonatomic, strong) SKSpriteNode* water;
-@property (nonatomic, strong) NSMutableArray* flyObstacles;
-@property (nonatomic, strong) NSMutableArray* waterObstacles;
-@property (nonatomic, strong) NSMutableArray* badBeesObstacles;
-@property (nonatomic, strong) PBParallaxScrolling* parallaxBackground;
+@property (nonatomic, strong) CFFrogNode *frog;
+@property (nonatomic, strong) SKSpriteNode *water;
+@property (nonatomic, strong) NSMutableArray *flyObstacles;
+@property (nonatomic, strong) NSMutableArray *waterObstacles;
+@property (nonatomic, strong) NSMutableArray *badBeesObstacles;
+@property (nonatomic, strong) PBParallaxScrolling *parallaxBackground;
 @property (nonatomic, weak) id <SceneDelegate> delegate;
 @property (nonatomic, strong) SKSpriteNode *award;
 @property (nonatomic, strong) CMMotionManager *motionManager;
 @property (nonatomic, assign) CGFloat xAcceleration;
 
--(id) initWithSize: (CGSize)size andLevelNumber: (NSInteger)levelNumber;
--(void) initializeGameWithLevel: (NSInteger) levelNumber;
--(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
--(void) jumpAction;
--(void) startGame;
--(void) updateAward: (NSTimeInterval) currentTime;
+- (id) initWithSize: (CGSize)size andLevelNumber: (NSInteger)levelNumber;
+- (void) initializeGameWithLevel: (NSInteger) levelNumber;
+- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
+- (void) jumpAction;
+- (void) startGame;
+- (void) updateAward: (NSTimeInterval) currentTime;
 @end
