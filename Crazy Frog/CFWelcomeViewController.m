@@ -59,8 +59,7 @@ static NSString *iTunesURL = @"https://itunes.apple.com/app/id863461572";
     else self.gameCenterButton.enabled = NO;
 }
 - (IBAction)volumeButtonTapped {
-//    self.audioManager.isMusicOn = !self.audioManager.isMusicOn;
-    self.audioManager.isMusicOn = NO;
+    self.audioManager.isMusicOn = !self.audioManager.isMusicOn;
     [self checkVoluleButton];
 }
 - (void) checkVoluleButton {
